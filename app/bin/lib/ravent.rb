@@ -44,7 +44,7 @@ when 'medium'
 when 'hard'
   difficulty = 'hard'
 else
-  puts 'Unrecognized difficulty'
+  puts Rainbow('Unrecognized difficulty').red
   exit
 end
 
