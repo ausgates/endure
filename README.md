@@ -1,4 +1,4 @@
 ravent
 =====
 
-a text adventure game
+a cliché text adventure game
