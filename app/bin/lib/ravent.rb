@@ -18,7 +18,8 @@ def exit
 end
 
 if input.nil?
-  puts 'Arguments are required'
+  puts ''
+  puts Rainbow('Arguments are required').red
   exit
 end
 
