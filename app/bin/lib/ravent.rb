@@ -32,7 +32,7 @@ def game(difficulty)
   when 'hard'
     lives = 3
   end
-  puts "You currently have #{lives} lives"
+  puts "You currently have #{Rainbow(lives).blue} lives"
 end
 
 # Check Difficulty
