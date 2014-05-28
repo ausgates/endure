@@ -1,4 +1,4 @@
-ravent
+endure
 =====
 
 a cliché text adventure game
@@ -20,8 +20,8 @@ cd app/bin/lib/
 ruby ravent.rb [ player name ] [ easy | medium | hard ]
 ```
 
-or check ravent's version
+or check endure's version
 
 ```bash
-ruby ravent.rb -v
+ruby endure.rb -v
 ```
