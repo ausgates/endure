@@ -9,9 +9,8 @@
 #
 #############################################
 
-VERSION = 0.1
 input = ARGV[0]
-require './ravent/Requirements.rb'
+require './ravent/requirements.rb'
 
 # If input is nil, alert the user and exit ravent
 if input.nil?
@@ -44,8 +43,9 @@ when 'medium'
   difficulty = 'medium'
 when 'hard'
   difficulty = 'hard'
-when '-v' || '--version'
-  puts "ravent v#{VERSION}"
+when '-v'
+  puts "ravent v#{Rainbow(Ravent::VERSION).green}"
+  exit
 else
   puts Rainbow('Unrecognized difficulty').red
   exit

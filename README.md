@@ -21,5 +21,4 @@ or check ravent's version
 
 ```bash
 ruby ravent.rb -v
-ruby ravent.rb --version
 ```

@@ -1,3 +1,4 @@
 require 'rainbow'
-require './ravent/Player.rb'
-require './ravent/Methods.rb'
+require './ravent/player.rb'
+require './ravent/methods.rb'
+require './ravent/version.rb'
