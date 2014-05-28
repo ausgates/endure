@@ -4,11 +4,11 @@
 def game(name, difficulty)
   case difficulty
   when 'easy'
-    lives = 10
+    health = 200
   when 'medium'
-    lives = 5
+    health = 100
   when 'hard'
-    lives = 3
+    health = 50
   end
 
   player = Player.new(name, health)
