@@ -32,8 +32,8 @@ ruby endure.rb [ player name ] [ difficulty level ]
 ruby endure.rb -v
 ```
 
-## difficulties
-
+difficulties
+=============
 
 | difficulty                                     | information 
 | -----------------------------------------------|:-------------------------:
