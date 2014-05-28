@@ -25,15 +25,15 @@ end
 def game(difficulty)
   case difficulty
   when 'easy'
-    lives = 10
+    player = Player.new(10)
   when 'medium'
-    lives = 5
+    player = Player.new(5)
   when 'hard'
-    lives = 3
+    player = Player.new(3)
   end
 
   # Actual game
-  puts "You currently have #{Rainbow(lives).blue} lives"
+  puts "You currently have #{Rainbow(player.lives).blue} lives"
 end
 
 # Check Difficulty
