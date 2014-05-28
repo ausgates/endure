@@ -12,7 +12,11 @@ class Player
 
   def suicide
     print Rainbow('Are you sure you want to kill yourself? [y/n] ').red
-    suicide_choice = gets.chomp
-    exit if suicide_choice.downcase == 'y'
+    suicide_choice = STDIN.gets.chomp
+    if suicide_choice.downcase == 'y'
+      true
+    else
+      false
+    end
   end
 end
