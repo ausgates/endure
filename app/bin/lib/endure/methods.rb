@@ -12,3 +12,7 @@ end
 def clear
   system('clear')
 end
+
+def pause
+  STDIN.gets
+end
