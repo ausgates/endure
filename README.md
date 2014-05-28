@@ -37,6 +37,6 @@ ruby endure.rb -v
 
 | difficulty                                     | information 
 | -----------------------------------------------|:-------------------------:
-| easy                                           | start with 10 lives
-| medium                                         | start with 5 lives
-| hard                                           | start with 3 lives
+| easy                                           | start with 200% health 
+| medium                                         | start with 100% health
+| hard                                           | start with 50% health
