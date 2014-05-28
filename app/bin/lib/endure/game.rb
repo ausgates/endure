@@ -27,7 +27,7 @@ def game(name, difficulty)
   player_sanity = Rainbow(player.sanity).cyan # sanity = cyan
 
   # The actual game
-  puts "Welcome to #{Rainbow('endure').red}"
+  puts "Welcome to #{Rainbow('endure').red.underline}"
   puts "New player #{player_name} initialized"
   puts "Player #{player_name} has #{player_health}% health"
   puts "Player #{player_name} is #{player_hunger}% fed"
@@ -57,7 +57,7 @@ def game(name, difficulty)
     when 'eat a banana'
       player.eat_banana
     else
-      # repeat prompt until user inputs proper input
+      what?
     end
   end
 end

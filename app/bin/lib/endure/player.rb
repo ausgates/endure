@@ -46,17 +46,20 @@ class Player
       puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
     else
-      puts Rainbow("Player #{Rainbow(@name).green} does not have a banana").red
+      puts Rainbow("Player #{player_name} does not have a banana").red
       pause
     end
   end
 
   def suicide
     puts
+    player_name = Rainbow(@name).green
+    player_hunger = Rainbow(@hunger).yellow
     print Rainbow('Are you sure you want to kill yourself? [y/n] ').red
     suicide_choice = STDIN.gets.chomp
     if suicide_choice.downcase == 'y' || suicide_choice.downcase == 'yes'
-      puts Rainbow('You have killed yourself').red
+      him_her_self = Rainbow('himself / herself').yellow
+      puts "Player #{player_name} killed #{him_her_self}"
       exit
     else
       false

@@ -16,3 +16,9 @@ end
 def pause
   STDIN.gets
 end
+
+def what?
+  puts Rainbow('What?').yellow
+  pause
+  clear
+end
