@@ -22,7 +22,7 @@ if ARGV[0] == '-v'
   exit
 end
 
-# If input is nil, alert the user and exit endure
+# If 'name' or 'difficulty_level' is nil, alert the user and exit endure
 if name.nil? || difficulty_level.nil?
   puts "#{Rainbow('Error:').red.underline} Not enough arguments"
   exit
