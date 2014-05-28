@@ -12,6 +12,7 @@
 VERSION = 0.1
 input = ARGV[0]
 require 'rainbow'
+require './ravent/Player.rb'
 
 def exit
   Process.exit(0)
