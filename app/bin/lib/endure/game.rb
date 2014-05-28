@@ -40,10 +40,10 @@ def game(name, difficulty)
     clear
     puts 'What would you like to do?'
     puts
-    puts 'Eat a banana'
-    puts 'Display stats'
-    puts 'List items'
-    puts 'End it all'
+    puts '[1] Eat a banana'
+    puts '[2] Display stats'
+    puts '[3] List items'
+    puts '[4] End it all'
     puts
     user_input = STDIN.gets.chomp
     case user_input.downcase
