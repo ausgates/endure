@@ -27,7 +27,7 @@ def game(name, difficulty)
   puts Rainbow('End it all')
   user_input = gets.chomp
   if user_input.downcase == 'end it all'
-    suicide
+    player.suicide
   else
     while true do
       clear
@@ -39,5 +39,5 @@ def game(name, difficulty)
       break if user_input.downcase == 'end it all'
     end
   end
-  suicide
+  player.suicide
 end
