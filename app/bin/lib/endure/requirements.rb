@@ -1,4 +1,4 @@
-# Include all files for easy `require` in endure.rb
+# Include all files for easy `require` in main.rb
 
 require 'rainbow'
 require './endure/player.rb'
