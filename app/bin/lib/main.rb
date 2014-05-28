@@ -20,7 +20,7 @@ end
 
 # If input is nil, alert the user and exit endure
 if name.nil? || difficulty_level.nil?
-  puts Rainbow('Not enough arguments.').red
+  puts "#{Rainbow('Error:').red.underline} Not enough arguments"
   exit
 end
 
