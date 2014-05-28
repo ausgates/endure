@@ -60,6 +60,12 @@ class Player
     if suicide_choice.downcase == 'y' || suicide_choice.downcase == 'yes'
       him_her_self = Rainbow('himself / herself').yellow
       puts "Player #{player_name} killed #{him_her_self}"
+      puts "Player #{Rainbow(@name).green} died with #{Rainbow(@health).blue}% health"
+      puts "Player #{Rainbow(@name).green} was #{Rainbow(@hunger).yellow}% fed"
+      puts "Player #{Rainbow(@name).green} was #{Rainbow(@sanity).cyan}% crazy"
+      @items.each do |i|
+        puts "Player #{Rainbow(@name).green} had a #{Rainbow(i).yellow}"
+      end
       exit
     else
       false

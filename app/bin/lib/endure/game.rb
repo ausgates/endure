@@ -48,14 +48,14 @@ def game(name, difficulty)
     user_input = STDIN.gets.chomp
     case user_input.downcase
 
-    when 'end it all'
-      player.suicide
-    when 'display stats'
-      player.display_stats
-    when 'list items'
-      player.list_items
-    when 'eat a banana'
+    when 'eat a banana' || '1'
       player.eat_banana
+    when 'display stats' || '2'
+      player.display_stats
+    when 'list items' || '3'
+      player.list_items
+    when 'end it all' || '4'
+      player.suicide
     else
       what?
     end
