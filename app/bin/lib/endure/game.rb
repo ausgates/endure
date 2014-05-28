@@ -21,10 +21,10 @@ def game(name, difficulty)
   # Create 'player_name' and 'player_health' variables,
   # which contain the appropriately coloured versions of themselves
   # Make a file to 'require' these later
-  player_name = Rainbow(player.name).green
-  player_health = Rainbow(player.health).blue
-  player_hunger = Rainbow(player.hunger).yellow
-  player_sanity = Rainbow(player.sanity).cyan
+  player_name = Rainbow(player.name).green # name = green
+  player_health = Rainbow(player.health).blue # health = blue
+  player_hunger = Rainbow(player.hunger).yellow # hunger = yellow
+  player_sanity = Rainbow(player.sanity).cyan # sanity = cyan
 
   # The actual game
   puts "Welcome to #{Rainbow('endure').red}"
@@ -41,12 +41,19 @@ def game(name, difficulty)
     puts 'What would you like to do?'
     puts
     puts 'Eat a banana'
+    puts 'Display stats'
+    puts 'List items'
     puts 'End it all'
+    puts
     user_input = STDIN.gets.chomp
     case user_input.downcase
 
     when 'end it all'
       player.suicide
+    when 'display stats'
+      player.display_stats
+    when 'list items'
+      player.list_items
     when 'eat a banana'
       player.eat_banana
     else
