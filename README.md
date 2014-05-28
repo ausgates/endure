@@ -23,13 +23,13 @@ cd app/bin/lib/
 now you can play the game
 
 ```bash
-ruby endure.rb [ player name ] [ difficulty level ]
+ruby main.rb [ player name ] [ difficulty level ]
 ```
 
 ..or just check endure's version
 
 ```bash
-ruby endure.rb -v
+ruby main.rb -v
 ```
 
 difficulties
