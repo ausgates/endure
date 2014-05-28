@@ -1,2 +1,2 @@
-class Person
+class Player
 end
