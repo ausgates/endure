@@ -1,5 +1,3 @@
-# The entire game is stored here
-
 # Main game method
 def game(name, difficulty)
   case difficulty
