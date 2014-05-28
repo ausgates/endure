@@ -18,10 +18,15 @@ git checkout unstable
 gem install rake # if you don't already have it
 rake
 cd app/bin/lib/
+```
+
+now you can play the game
+
+```bash
 ruby endure.rb [ player name ] [ easy | medium | hard ]
 ```
 
-or check endure's version
+..or just check endure's version
 
 ```bash
 ruby endure.rb -v
