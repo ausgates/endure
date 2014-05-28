@@ -32,12 +32,11 @@ ruby endure.rb [ player name ] [ difficulty level ]
 ruby endure.rb -v
 ```
 
-## gameplay
-difficulty levels
+## difficulties
 
-- easy
-  - start with 10 lives
-- medium
-  - start with 5 lives
-- hard
-  - start with 3 lives
+
+| difficulty                                     | information 
+| -----------------------------------------------|:-------------------------:
+| easy                                           | start with 10 lives
+| medium                                         | start with 5 lives
+| hard                                           | start with 3 lives
