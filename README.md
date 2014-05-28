@@ -8,8 +8,8 @@ a cliché text adventure game
 usage
 =====
 
-you'll need git to clone the repo
-and ruby to play the game
+you'll need [git](http://git-scm.com/) to clone the repo
+and [ruby](https://www.ruby-lang.org/en/) to play the game
 
 ```bash
 git clone https://github.com/trommel/ravent
