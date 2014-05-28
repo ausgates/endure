@@ -12,7 +12,7 @@ def game(name, difficulty)
   end
 
   player = Player.new(name, health)
-  player_name = Rainbow(player.health).green
+  player_name = Rainbow(player.name).green
   player_health = Rainbow(player.health).blue
 
   # Actual game

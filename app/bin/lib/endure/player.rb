@@ -1,9 +1,9 @@
 # Main class for Player
 class Player
-  def initialize(name, lives)
+  def initialize(name, health)
     @items = []
-    @health = health
     @name = name
+    @health = health
   end
 
   attr_reader :name, :health
