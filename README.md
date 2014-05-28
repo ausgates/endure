@@ -13,7 +13,10 @@ and [ruby](https://www.ruby-lang.org/en/) to play the game
 
 ```bash
 git clone https://github.com/trommel/ravent
-cd ravent/app/bin/lib/
+cd ravent/
+gem install rake # if you don't already have it 
+rake
+cd app/bin/lib/
 ruby ravent.rb [ easy | medium | hard ]
 ```
 
