@@ -9,11 +9,14 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
+# Set 'name' and 'difficulty_level' to first and second arguments
 name = ARGV[0]
 difficulty_level = ARGV[1]
+
+# Require main requirements files
 require './endure/requirements.rb'
 
-# Check if the user just wants to check the version
+# If the first argument is '-v', just display the version and exit endure
 if ARGV[0] == '-v'
   puts "endure v#{Rainbow(Endure::VERSION).green}"
   exit
