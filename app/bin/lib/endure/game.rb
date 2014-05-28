@@ -18,6 +18,26 @@ def game(name, difficulty)
   player_health = Rainbow(player.health).blue
 
   # The actual game
+  clear
   puts "New player #{player_name} initialized"
   puts "Player #{player_name} has #{player_health}% health"
+  puts "Welcome to #{Rainbow('endure')}"
+  puts 'What would you like to do?'
+  puts
+  puts Rainbow('End it all')
+  user_input = gets.chomp
+  if user_input.downcase == 'end it all'
+    suicide
+  else
+    while true do
+      clear
+      puts 'What would you like to do?'
+      puts
+      puts Rainbow('End it all').red
+      puts
+      user_input = gets.chomp
+      break if user_input.downcase == 'end it all'
+    end
+  end
+  suicide
 end
