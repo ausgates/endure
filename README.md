@@ -16,3 +16,10 @@ git clone https://github.com/trommel/ravent
 cd ravent/app/bin/lib/
 ruby ravent.rb [ easy | medium | hard ]
 ```
+
+or check ravent's version
+
+```bash
+ruby ravent.rb -v
+ruby ravent.rb --version
+```

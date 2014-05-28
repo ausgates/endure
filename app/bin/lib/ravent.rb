@@ -11,19 +11,17 @@
 
 VERSION = 0.1
 input = ARGV[0]
-require 'rainbow'
-require './ravent/Player.rb'
+require './ravent/Requirements.rb'
 
-def exit
-  Process.exit(0)
-end
-
+# If input is nil, alert the user and exit ravent
 if input.nil?
   puts Rainbow('Arguments are required').red
   exit
 end
 
 # The entire game is stored here
+
+# Initialization for difficulty levels
 def game(difficulty)
   case difficulty
   when 'easy'
@@ -33,6 +31,8 @@ def game(difficulty)
   when 'hard'
     lives = 3
   end
+
+  # Actual game
   puts "You currently have #{Rainbow(lives).blue} lives"
 end
 
@@ -44,6 +44,8 @@ when 'medium'
   difficulty = 'medium'
 when 'hard'
   difficulty = 'hard'
+when '-v' || '--version'
+  puts "ravent v#{VERSION}"
 else
   puts Rainbow('Unrecognized difficulty').red
   exit
