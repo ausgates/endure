@@ -13,7 +13,7 @@ name = ARGV[0]
 difficulty_level = ARGV[1]
 require './ravent/requirements.rb'
 
-if difficulty_level == '-v'
+if ARGV[0] == '-v'
   puts "ravent v#{Rainbow(Ravent::VERSION).green}"
   exit
 end
