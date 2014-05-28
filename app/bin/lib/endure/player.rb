@@ -41,7 +41,9 @@ class Player
     if @items.include? 'banana'
       @items.delete_at(@items.index('banana'))
       @hunger += 10
-      puts "Player #{Rainbow(@name).green} is now #{Rainbow(@hunger).yellow}% hungry"
+      player_name = Rainbow(@name).green
+      player_hunger = Rainbow(@hunger).yellow
+      puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
     else
       puts Rainbow("Player #{Rainbow(@name).green} does not have a banana").red
