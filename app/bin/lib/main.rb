@@ -9,7 +9,7 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # #
 
-# Set 'name' and 'difficulty_level' to first and second arguments
+# Set 'name' and 'difficulty_level' to the first and second arguments
 name = ARGV[0]
 difficulty_level = ARGV[1]
 
