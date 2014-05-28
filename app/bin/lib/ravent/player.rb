@@ -1,11 +1,12 @@
 # Main class for Player
 class Player
-  def initialize(lives)
+  def initialize(name, lives)
     @items = []
     @lives = lives
+    @name = name
   end
 
-  attr_reader :lives
+  attr_reader :name, :lives
 
   def suicide
     print Rainbow('Are you sure you want to kill yourself? [y/n] ').red

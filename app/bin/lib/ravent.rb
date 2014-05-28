@@ -9,47 +9,55 @@
 #
 #############################################
 
-input = ARGV[0]
+name = ARGV[0]
+difficulty_level = ARGV[1]
 require './ravent/requirements.rb'
 
+if difficulty_level == '-v'
+  puts "ravent v#{Rainbow(Ravent::VERSION).green}"
+  exit
+end
+
 # If input is nil, alert the user and exit ravent
-if input.nil?
-  puts Rainbow('Arguments are required').red
+if name.nil? || difficulty_level.nil?
+  puts Rainbow('Not enough arguments.').red
   exit
 end
 
 # The entire game is stored here
 
 # Initialization for difficulty levels
-def game(difficulty)
+def game(name, difficulty)
   case difficulty
   when 'easy'
-    player = Player.new(10)
+    lives = 10
   when 'medium'
-    player = Player.new(5)
+    lives = 5
   when 'hard'
-    player = Player.new(3)
+    lives = 3
   end
 
+  player = Player.new(name, lives)
+  player_name = Rainbow(player.name).green
+  player_lives = Rainbow(player.lives).blue
+
   # Actual game
-  puts "You currently have #{Rainbow(player.lives).blue} lives"
+  puts "New player #{player_name} initialized"
+  puts "Player #{player_name} has #{player_lives} lives"
 end
 
 # Check Difficulty
-case input
+case difficulty_level
 when 'easy'
   difficulty = 'easy'
 when 'medium'
   difficulty = 'medium'
 when 'hard'
   difficulty = 'hard'
-when '-v'
-  puts "ravent v#{Rainbow(Ravent::VERSION).green}"
-  exit
 else
-  puts Rainbow('Unrecognized difficulty').red
+  puts "#{Rainbow('Error:').red.underline} Unrecognized difficulty"
   exit
 end
 
 # Call game method to start the game
-game(difficulty)
+game(name, difficulty)
