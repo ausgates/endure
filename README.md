@@ -1,7 +1,7 @@
 endure
 =====
 
-a cliché text adventure game
+a cliché survival text-based adventure game
 
 ~~i might move `endure.rb` into the root project or i might not~~
 
