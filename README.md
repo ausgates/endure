@@ -39,5 +39,5 @@ difficulty levels
   - start with 10 lives
 - medium
   - start with 5 lives
-hard
+- hard
   - start with 3 lives
