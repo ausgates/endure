@@ -1,4 +1,5 @@
 # Main class for Player
+
 class Player
   def initialize(name, lives)
     @items = []
