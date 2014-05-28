@@ -1,24 +1,24 @@
 #!/usr/bin/env ruby
 
-#############################################
-#                                       m
-#   m mm   mmm   m   m   mmm   m mm   mm#mm
-#   #"  " "   #  "m m"  #"  #  #"  #    #
-#   #     m"""#   #m#   #""""  #   #    #
-#   #     "mm"#    #    "#mm"  #   #    "mm
+# # # # # # # # # # # # # # # # # # # # # # # #
+#                    #
+#    mmm   m mm    mmm#  m   m   m mm   mmm
+#   #"  #  #"  #  #" "#  #   #   #"  " #"  #
+#   #""""  #   #  #   #  #   #   #     #""""
+#   "#mm"  #   #  "#m##  "mm"#   #     "#mm"
 #
-#############################################
+# # # # # # # # # # # # # # # # # # # # # # # #
 
 name = ARGV[0]
 difficulty_level = ARGV[1]
-require './ravent/requirements.rb'
+require './endure/requirements.rb'
 
 if ARGV[0] == '-v'
-  puts "ravent v#{Rainbow(Ravent::VERSION).green}"
+  puts "endure v#{Rainbow(Endure::VERSION).green}"
   exit
 end
 
-# If input is nil, alert the user and exit ravent
+# If input is nil, alert the user and exit endure
 if name.nil? || difficulty_level.nil?
   puts Rainbow('Not enough arguments.').red
   exit
