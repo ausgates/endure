@@ -13,6 +13,7 @@ name = ARGV[0]
 difficulty_level = ARGV[1]
 require './endure/requirements.rb'
 
+# Check if the user just wants to check the version
 if ARGV[0] == '-v'
   puts "endure v#{Rainbow(Endure::VERSION).green}"
   exit
