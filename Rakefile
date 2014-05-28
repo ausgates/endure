@@ -1,4 +1,4 @@
-task :default => [:install]
+task default: [:install]
 
 task :install do
   `gem install bundler`

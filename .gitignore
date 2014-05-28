@@ -5,6 +5,9 @@
 # [Deep Sigh]
 .DS_Store
 
+# No, I don't want these either
+Gemfile.lock
+
 *.gem
 *.rbc
 /.config

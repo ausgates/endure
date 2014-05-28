@@ -4,13 +4,13 @@ class Player
     @items = []
     @lives = lives
   end
-  def lives
-    return @lives
-  end
+
+  attr_reader :lives
+
   def suicide
     print Rainbow('Are you sure you want to kill yourself? [y/n] ').red
-    suicideChoice = gets.chomp
-    if suicideChoice == 'y'
+    suicide_choice = gets.chomp
+    if suicide_choice == 'y'
       exit
     else
       print Rainbow('That\'s probably a good idea.').green
