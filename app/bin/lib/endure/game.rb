@@ -1,6 +1,6 @@
 # The entire game is stored here
 
-# Initialization for difficulty levels
+# Main game method
 def game(name, difficulty)
   case difficulty
   when 'easy'
