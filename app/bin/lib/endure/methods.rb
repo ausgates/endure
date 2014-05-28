@@ -3,7 +3,7 @@
 # Main game method is an exception
 # It's stored in game.rb
 
-# Exit method (quits ravent)
+# Exit method (quits endure)
 def exit
   Process.exit(0)
 end
