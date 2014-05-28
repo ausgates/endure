@@ -1,7 +1,7 @@
-# Include all files for easy `require` in ravent.rb
+# Include all files for easy `require` in endure.rb
 
 require 'rainbow'
-require './ravent/player.rb'
-require './ravent/methods.rb'
-require './ravent/version.rb'
-require './ravent/game.rb'
+require './endure/player.rb'
+require './endure/methods.rb'
+require './endure/version.rb'
+require './endure/game.rb'
