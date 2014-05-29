@@ -59,5 +59,5 @@ to do
   - [ ] displaying player's enemies
 
 - [ ] make arguments with spaces work as one argument (eat cooked noodles)
-
+- [ ] create way of saving game (preferably through JSON file, but that can be easily edited
 - [x] when user dies, print player stats
