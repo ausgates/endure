@@ -39,11 +39,6 @@ class Player
   def eat_food
     puts
 
-    if @items.empty?
-      puts Rainbow('You have no food left').red
-      break
-    end
-
     print 'What would you like to eat? '
     food_input = STDIN.gets.chomp
     if @items.include? food_input
@@ -55,9 +50,11 @@ class Player
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{food}"
       puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
-    else
+    elsif
       puts Rainbow("Player #{player_name} does not have a #{food_input}").red
       pause
+    else
+      puts Rainbow('You have no food left').red
     end
   end
 
