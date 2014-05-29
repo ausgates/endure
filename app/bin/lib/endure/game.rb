@@ -4,11 +4,11 @@ def game(name, difficulty)
   when 'easy'
     health = 200
     hunger = 150
-    sanity = 100
+    sanity = 175
   when 'medium'
     health = 100
     hunger = 100
-    sanity = 50
+    sanity = 100
   when 'hard'
     health = 50
     hunger = 50
@@ -27,7 +27,7 @@ def game(name, difficulty)
   player_sanity = Rainbow(player.sanity).cyan # sanity = cyan
 
   # The actual game
-  puts "Welcome to #{Rainbow('endure').red.underline}"
+  puts Rainbow('Welcome to endure').red.underline
   puts "New player #{player_name} initialized"
   puts "Player #{player_name} has #{player_health}% health"
   puts "Player #{player_name} is #{player_hunger}% fed"
@@ -38,7 +38,9 @@ def game(name, difficulty)
 
   while true
     clear
-    puts 'What would you like to do?'
+    puts Rainbow('What would you like to do?').inverse
+    puts
+    puts "- #{Rainbow('Start').green}"
     puts
     puts "- #{Rainbow('Eat').green}"
     player.food.each do |i|
@@ -58,6 +60,10 @@ def game(name, difficulty)
 
     case user_input[0]
 
+    when 'start'
+      puts Rainbow('You can\'t do crazy stuff like that right now, dude').red
+      pause
+      clear
     when 'eat'
       if user_input[1].nil?
         what?

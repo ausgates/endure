@@ -5,7 +5,7 @@ class Player
     @health = health
     @hunger = hunger
     @sanity = sanity
-    @food = ["banana", "yogurt", "ketchup", "raw noodes"]
+    @food = %w(banana yogurt ketchup noodes)
     @items = %w()
     @friends = %w()
     @enemies = %w()
