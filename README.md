@@ -37,8 +37,7 @@ difficulties
 | -----------------------------------------------|:-------:--------:-------
 | easy                                           | 200%   | 150    | 175
 | medium                                         | 100%   | 100    | 100
-| medium                                         | start with 100% health, 100 hunger, 100 sanity
-| hard                                           | start with 50% health, 40 hunger, 40 sanity
+| hard                                           | 50%    | 40     | 40
 
 
 to do
