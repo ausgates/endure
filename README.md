@@ -35,9 +35,9 @@ ruby main.rb -v
 difficulties
 -------------
 
-| difficulty                                     | information 
+| difficulty                                     | information
 | -----------------------------------------------|:-------------------------:
-| easy                                           | start with 200% health 
+| easy                                           | start with 200% health
 | medium                                         | start with 100% health
 | hard                                           | start with 50% health
 
@@ -45,9 +45,19 @@ difficulties
 to do
 -----
 
+- completely re-code game so player can type in what they want-
+  for example
+  ```
+  What would you like to do?
+  >> eat yogurt
+
+  Player josh ate 1 yogurt
+  Player josh is now 110% hungry
+  ```
+
 - create method for
-  - displaying player's current inventory
+  - ~~displaying player's current inventory~~
   - displaying player's friends
   - displaying player's enemies
 
-- when user dies, print player stats  
+- ~~when user dies, print player stats~~
