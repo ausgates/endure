@@ -5,12 +5,12 @@ class Player
     @health = health
     @hunger = hunger
     @sanity = sanity
-    @items = ["banana", "yogurt" "ketchup" "raw noodes"]
+    @items = ["banana", "yogurt", "ketchup", "raw noodes"]
     @friends = %w()
     @enemies = %w()
   end
 
-  attr_reader :name, :health, :hunger, :sanity
+  attr_reader :name, :health, :hunger, :sanity, :items
 
   def display_stats
     puts
@@ -36,22 +36,19 @@ class Player
     pause
   end
 
-  def eat_food
+  def eat(food)
     puts
-
-    print 'What would you like to eat? '
-    food_input = STDIN.gets.chomp
-    if @items.include? food_input
-      @items.delete_at(@items.index(food_input))
+    if @items.include? food
+      @items.delete_at(@items.index(food))
       @hunger += 10
       player_name = Rainbow(@name).green
       player_hunger = Rainbow(@hunger).yellow
-      food = Rainbow(food_input).yellow
-      puts "Player #{player_name} ate #{Rainbow('1').blue} #{food}"
+      colored_food = Rainbow(food).yellow
+      puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
       puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
     elsif
-      puts Rainbow("Player #{player_name} does not have a #{food_input}").red
+      puts Rainbow("Player #{player_name} does not have a #{food}").red
       pause
     else
       puts Rainbow('You have no food left').red

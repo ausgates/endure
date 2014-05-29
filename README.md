@@ -45,7 +45,7 @@ difficulties
 to do
 -----
 
-- completely re-code game so player can type in what they want-
+- [x] completely re-code endure so player can type in what they want-
   for example
   ```
   What would you like to do?
@@ -55,9 +55,9 @@ to do
   Player josh is now 110% hungry
   ```
 
-- create method for
-  - ~~displaying player's current inventory~~
-  - displaying player's friends
-  - displaying player's enemies
+- [ ] create method for
+  - [x] displaying player's current inventory
+  - [ ] displaying player's friends
+  - [ ] displaying player's enemies
 
-- ~~when user dies, print player stats~~
+- [x] when user dies, print player stats

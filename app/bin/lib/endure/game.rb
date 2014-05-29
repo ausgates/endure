@@ -40,24 +40,46 @@ def game(name, difficulty)
     clear
     puts 'What would you like to do?'
     puts
-    puts '[1] Eat food'
-    puts '[2] Display stats'
-    puts '[3] List items'
-    puts '[4] End it all'
+    puts "- #{Rainbow('Eat').green}"
+    player.items.each do |i|
+      puts "\t - #{Rainbow(i).blue}"
+    end
+    puts
+    puts "- #{Rainbow('List').green}"
+    puts "\t - #{Rainbow('List items').blue}"
+    puts "\t - #{Rainbow('List stats').blue}"
+    puts
+    puts "- #{Rainbow('Kill').green}"
+    puts "\t - #{Rainbow('Myself').blue}"
     puts
 
-    user_input = STDIN.gets.chomp
+    print "#{Rainbow('> ').red}"
+    user_input = STDIN.gets.chomp.split ' '
 
-    case user_input
+    case user_input[0]
 
-    when '1'
-      player.eat_food
-    when '2'
-      player.display_stats
-    when '3'
-      player.list_items
-    when '4'
-      player.suicide
+    when 'eat'
+      if user_input[1].nil?
+        what?
+      else
+        player.eat(user_input[1])
+      end
+    when 'list'
+      case user_input[1]
+      when 'stats'
+        player.display_stats
+      when 'items'
+        player.list_items
+      else
+        what?
+      end
+    when 'kill'
+      case user_input[1]
+      when 'myself'
+        player.suicide
+      else
+        what?
+      end
     else
       what?
     end
