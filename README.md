@@ -33,9 +33,10 @@ ruby main.rb -v
 difficulties
 -------------
 
-| difficulty                                     | information
-| -----------------------------------------------|:-------------------------:
-| easy                                           | start with 200% health, 150 hunger, 175 sanity
+| difficulty                                     | health | hunger | sanity
+| -----------------------------------------------|:-------:--------:-------
+| easy                                           | 200%   | 150    | 175
+| medium                                         | 100%   | 100    | 100
 | medium                                         | start with 100% health, 100 hunger, 100 sanity
 | hard                                           | start with 50% health, 40 hunger, 40 sanity
 
