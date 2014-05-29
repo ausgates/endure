@@ -36,17 +36,27 @@ class Player
     pause
   end
 
-  def eat_banana
+  def eat_food
     puts
-    if @items.include? 'banana'
-      @items.delete_at(@items.index('banana'))
+
+    if @items.empty?
+      puts Rainbow('You have no food left').red
+      break
+    end
+
+    print 'What would you like to eat? '
+    food_input = STDIN.gets.chomp
+    if @items.include? food_input
+      @items.delete_at(@items.index(food_input))
       @hunger += 10
       player_name = Rainbow(@name).green
       player_hunger = Rainbow(@hunger).yellow
+      food = Rainbow(food_input).yellow
+      puts "Player #{player_name} ate #{Rainbow('1').blue} #{food}"
       puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
     else
-      puts Rainbow("Player #{player_name} does not have a banana").red
+      puts Rainbow("Player #{player_name} does not have a #{food_input}").red
       pause
     end
   end

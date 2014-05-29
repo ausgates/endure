@@ -40,21 +40,23 @@ def game(name, difficulty)
     clear
     puts 'What would you like to do?'
     puts
-    puts '[1] Eat a banana'
+    puts '[1] Eat food'
     puts '[2] Display stats'
     puts '[3] List items'
     puts '[4] End it all'
     puts
-    user_input = STDIN.gets.chomp
-    case user_input.downcase
 
-    when 'eat a banana' || '1'
-      player.eat_banana
-    when 'display stats' || '2'
+    user_input = STDIN.gets.chomp
+
+    case user_input
+
+    when '1'
+      player.eat_food
+    when '2'
       player.display_stats
-    when 'list items' || '3'
+    when '3'
       player.list_items
-    when 'end it all' || '4'
+    when '4'
       player.suicide
     else
       what?
