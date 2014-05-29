@@ -60,7 +60,7 @@ to do
   - [ ] displaying player's enemies
 
 - [ ] add
-  - [ ] zombies, because in this day and age, no game will get decent ratings without some
+  - [ ] zombies, because in this day and age, nobody will like the game without them
 
 - [ ] fix
   - [ ] sane levels so the highest sane rate you can be is 100%
