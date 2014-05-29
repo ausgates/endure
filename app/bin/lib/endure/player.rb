@@ -6,7 +6,7 @@ class Player
     @hunger = hunger
     @sanity = sanity
     @food = %w(banana yogurt ketchup noodes)
-    @items = %w()
+    @items = %w(lint)
     @friends = %w()
     @enemies = %w()
   end
@@ -23,7 +23,7 @@ class Player
 
   def list_items
     puts
-    counter = 1
+    counter = 0
     @items.each do |i|
       counter += 1
       if counter.even?
