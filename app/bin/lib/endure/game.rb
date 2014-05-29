@@ -41,7 +41,7 @@ def game(name, difficulty)
     puts 'What would you like to do?'
     puts
     puts "- #{Rainbow('Eat').green}"
-    player.items.each do |i|
+    player.food.each do |i|
       puts "\t - #{Rainbow(i).blue}"
     end
     puts
@@ -80,6 +80,8 @@ def game(name, difficulty)
       else
         what?
       end
+    when 'exit'
+      exit
     else
       what?
     end
