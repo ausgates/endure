@@ -54,10 +54,10 @@ to do
   ```
 
 - [ ] create method for
+- [x] when user dies, print player stats
   - [x] displaying player's current inventory
   - [ ] displaying player's friends
   - [ ] displaying player's enemies
-  - [x] when user dies, print player stats
 
 - [ ] fix
   - [ ] sane levels so the highest sane rate you can be is 100%
