@@ -57,12 +57,11 @@ to do
   - [x] displaying player's current inventory
   - [ ] displaying player's friends
   - [ ] displaying player's enemies
+  - [x] when user dies, print player stats
 
 - [ ] fix
   - [ ] sane levels so the highest sane rate you can be is 100%
 
-- [ ] create
+- [ ] make
   - [ ] arguments with spaces work as one argument (eat cooked noodles)
   - [ ] way of saving game (preferably through JSON file, but that can be easily edited
-
-- [x] when user dies, print player stats
