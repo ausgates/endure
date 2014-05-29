@@ -60,6 +60,7 @@ to do
   - [ ] displaying player's enemies
 
 - [ ] add
+  - [ ] an actual story
   - [ ] zombies, because in this day and age, nobody will like the game without them
 
 - [ ] fix
