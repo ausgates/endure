@@ -33,11 +33,11 @@ ruby main.rb -v
 difficulties
 -------------
 
-| difficulty                                     | health | hunger | sanity
-| -----------------------------------------------|:-------:--------:-------
-| easy                                           | 200%   | 150    | 175
-| medium                                         | 100%   | 100    | 100
-| hard                                           | 50%    | 40     | 40
+| difficulty | health | hunger | sanity |
+|------------|--------|--------|--------|
+| easy       | 200%   | 150    | 175    |
+| medium     | 100    | 100    | 100    |
+| hard       | 50%    | 40     | 40     |
 
 
 to do
