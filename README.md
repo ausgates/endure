@@ -54,7 +54,7 @@ to do
   ```
 
 - [ ] create method for
-- [x] when user dies, print player stats
+  - [x] when user dies, print player stats
   - [x] displaying player's current inventory
   - [ ] displaying player's friends
   - [ ] displaying player's enemies
