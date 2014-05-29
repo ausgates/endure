@@ -41,6 +41,7 @@ def game(name, difficulty)
     puts Rainbow('What would you like to do?').inverse
     puts
     puts "- #{Rainbow('Start').green}"
+    puts "\t - #{Rainbow('Game').blue}"
     puts
     puts "- #{Rainbow('Eat').green}"
     player.food.each do |i|
@@ -56,14 +57,20 @@ def game(name, difficulty)
     puts
 
     print "#{Rainbow('> ').red}"
-    user_input = STDIN.gets.chomp.split ' '
+    user_input = STDIN.gets.chomp.split ' '.downcase
 
     case user_input[0]
 
     when 'start'
-      puts Rainbow('You can\'t do crazy stuff like that right now, dude').red
-      pause
-      clear
+      case user_input[1]
+      when 'game'
+        # Entire game
+        clear
+        puts "Player #{Rainbow(player.name).green} shows up for a party"
+        pause
+      else
+        what?
+      end
     when 'eat'
       if user_input[1].nil?
         what?
