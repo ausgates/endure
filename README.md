@@ -13,7 +13,6 @@ and [ruby](https://www.ruby-lang.org/en/) to play the game
 ```bash
 git clone https://github.com/trommel/endure
 cd endure/
-# git checkout unstable
 gem install rake # if you don't already have it
 rake
 cd app/bin/lib/
