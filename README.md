@@ -58,6 +58,11 @@ to do
   - [ ] displaying player's friends
   - [ ] displaying player's enemies
 
-- [ ] make arguments with spaces work as one argument (eat cooked noodles)
-- [ ] create way of saving game (preferably through JSON file, but that can be easily edited
+- [ ] fix
+  - [ ] sane levels so the highest sane rate you can be is 100%
+
+- [ ] create
+  - [ ] arguments with spaces work as one argument (eat cooked noodles)
+  - [ ] way of saving game (preferably through JSON file, but that can be easily edited
+
 - [x] when user dies, print player stats
