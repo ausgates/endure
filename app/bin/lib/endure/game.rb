@@ -31,7 +31,7 @@ def game(name, difficulty)
   puts "New player #{player_name} initialized"
   puts "Player #{player_name} has #{player_health}% health"
   puts "Player #{player_name} is #{player_hunger}% fed"
-  puts "Player #{player_name} is #{player_sanity}% crazy"
+  puts "Player #{player_name} is #{player_sanity}% sane"
   puts
   puts 'Press enter to continue..'
   STDIN.gets

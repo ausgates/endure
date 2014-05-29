@@ -5,10 +5,18 @@ class Player
     @health = health
     @hunger = hunger
     @sanity = sanity
-    @food = %w(banana yogurt ketchup noodes)
-    @items = %w(lint)
     @friends = %w()
     @enemies = %w()
+    @items = [
+      "lint"
+    ]
+    @food = [
+      "banana",
+      "yogurt",
+      "ketchup",
+      "raw noodles",
+      "salted turkey breast"
+    ]
   end
 
   attr_reader :name, :health, :hunger, :sanity, :food
@@ -17,7 +25,7 @@ class Player
     puts
     puts "Player #{Rainbow(@name).green} has #{Rainbow(@health).blue}% health"
     puts "Player #{Rainbow(@name).green} is #{Rainbow(@hunger).yellow}% fed"
-    puts "Player #{Rainbow(@name).green} is #{Rainbow(@sanity).cyan}% crazy"
+    puts "Player #{Rainbow(@name).green} is #{Rainbow(@sanity).cyan}% sane"
     pause
   end
 
@@ -45,6 +53,7 @@ class Player
     if @food.include? food
       @food.delete_at(@food.index(food))
       @hunger += 10
+      player_hunger = Rainbow(@hunger).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
       puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
@@ -70,7 +79,7 @@ class Player
       puts "Player #{Rainbow(@name).green} was #{Rainbow(@hunger).yellow}% fed"
       puts "Player #{Rainbow(@name).green} was #{Rainbow(@sanity).cyan}% crazy"
       @items.each do |i|
-        puts "Player #{Rainbow(@name).green} had a #{Rainbow(i).yellow}"
+        puts "Player #{Rainbow(@name).green} had #{Rainbow(i).yellow}"
       end
       exit
     else
