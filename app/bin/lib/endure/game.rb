@@ -65,9 +65,7 @@ def game(name, difficulty)
       case user_input[1]
       when 'game'
         # Entire game
-        clear
-        puts "Player #{Rainbow(player.name).green} shows up for a party"
-        pause
+        puts "Player #{Rainbow(player.name).green} walks into the woods.."
       else
         what?
       end
