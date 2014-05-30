@@ -68,4 +68,4 @@ to do
 
 - [ ] make
   - [ ] arguments with spaces work as one argument (eat cooked noodles)
-  - [ ] way of saving game (preferably through JSON file, but that can be easily edited
+  - [ ] way of saving game (preferably through JSON file, but that can be easily edited..)
