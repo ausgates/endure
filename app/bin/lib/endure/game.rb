@@ -49,8 +49,8 @@ def game(name, difficulty)
     end
     puts
     puts "- #{Rainbow('List').green}"
-    puts "\t - #{Rainbow('List items').blue}"
-    puts "\t - #{Rainbow('List stats').blue}"
+    puts "\t - #{Rainbow('Stats').blue}"
+    puts "\t - #{Rainbow('Items').blue}"
     puts
     puts "- #{Rainbow('Kill').green}"
     puts "\t - #{Rainbow('Myself').blue}"

@@ -14,8 +14,16 @@ class Player
       "banana",
       "yogurt",
       "ketchup",
-      "raw noodles",
-      "salted turkey breast"
+      "brownie",
+      "sauce",
+      "pickle",
+      "watermelon",
+      "cheese",
+      "cashews",
+      "jam",
+      "chili",
+      "potato",
+      "beans"
     ]
   end
 
