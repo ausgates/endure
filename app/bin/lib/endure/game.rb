@@ -11,18 +11,24 @@ def game(player_object)
   player_hunger = Rainbow(player.hunger).yellow # hunger = yellow
   player_sanity = Rainbow(player.sanity).cyan # sanity = cyan
 
+  ## REMOVE THIS
+  # part_one(player)
+  # exit
+  ## THIS IS FOR TESTING PURPOSES
+
   # The actual game
-  puts Rainbow('Welcome to endure').red.underline
-  puts "New player #{player_name} initialized"
-  puts "Player #{player_name} has #{player_health}% health"
-  puts "Player #{player_name} is #{player_hunger}% fed"
-  puts "Player #{player_name} is #{player_sanity}% sane"
-  puts
-  puts 'Press enter to continue..'
-  STDIN.gets
+  # puts Rainbow('Welcome to endure').red.underline
+  # puts "New player #{player_name} initialized"
+  # puts "Player #{player_name} has #{player_health}% health"
+  # puts "Player #{player_name} is #{player_hunger}% fed"
+  # puts "Player #{player_name} is #{player_sanity}% sane"
+  # puts
+  # puts 'Press enter to continue..'
+  # STDIN.gets
 
   while true
     clear
+    puts Rainbow('endure').red.underline
     puts Rainbow('What would you like to do?').inverse
     player.list_stats
     puts
@@ -46,6 +52,8 @@ def game(player_object)
         puts "\t - #{Rainbow(i).blue}"
       end
     end
+    puts "- #{Rainbow('List').green}"
+    puts "\t - #{Rainbow('Friends').blue}"
     puts
     puts "- #{Rainbow('Trash').green}"
     if player.foods.empty?
@@ -90,6 +98,12 @@ def game(player_object)
           what?
         else
           player.use(user_input[1])
+        end
+    when 'list'
+        if user_input[1].nil?
+          what?
+        else
+          list_friends
         end
     when 'trash'
         if user_input[1].nil?

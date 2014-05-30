@@ -1,3 +1,4 @@
+require_relative 'requirements'
 # Define all methods here
 
 # Main game method is an exception
@@ -17,12 +18,47 @@ def pause
   STDIN.gets
 end
 
-def wait
+def wait!
   sleep 2
 end
 
+def loading
+  5.times do
+    print '.'
+    sleep 0.6
+  end
+end
+
+def typewriter(input)
+  input.length.times do |i|
+    print input[i]
+    sleep 0.1
+  end
+  puts
+end
+
 def what?
-  puts Rainbow('What?').yellow
+  Rainbow('What?').yellow
+  pause
+  clear
+end
+
+def say(player, message)
+  return "#{player}: #{message}"
+  wait!
+end
+
+def log(log)
+  Rainbow(log).yellow
+end
+
+def you (name, message)
+  return "#{name} #{message}"
+  wait!
+end
+
+def next_scene
+  loading
   pause
   clear
 end

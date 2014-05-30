@@ -62,6 +62,8 @@ to do
 - [ ] add
   - [ ] an actual story
   - [ ] zombies, because in this day and age, nobody will like the game without them
+  - [ ] food class
+  - [ ] 'other player' class
 
 - [ ] fix
   - [ ] sane levels so the highest sane rate you can be is 100%

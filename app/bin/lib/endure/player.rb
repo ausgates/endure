@@ -3,7 +3,7 @@ require_relative 'game'
 # Main class for Player
 class Player
   def initialize(name, health, hunger, sanity)
-    @name = name
+    @name = name.capitalize
     @health = health
     @hunger = hunger
     @sanity = sanity
@@ -20,6 +20,7 @@ class Player
       'brownie',
       'sauce',
       'beans',
+      'pills',
       'pickle',
       'mayo'
       # 'cheese'
@@ -31,7 +32,7 @@ class Player
     ]
   end
 
-  attr_reader :name, :health, :hunger, :sanity, :foods, :items
+  attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items
 
   def list_stats
     puts
@@ -60,7 +61,11 @@ class Player
     puts
     if @foods.include? food
       @foods.delete_at(@foods.index(food))
-      @hunger += 10
+      if food == "pills"
+        @sanity += 10
+      else
+        @hunger += 10
+      end
       player_name = Rainbow(@name).green
       colored_food = Rainbow(food).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
@@ -131,6 +136,17 @@ class Player
       exit
     else
       false
+    end
+  end
+
+  def add_friend(friend)
+    @friends.push(friend)
+  end
+
+  def list_friends
+    clear
+    @friend.each do |f|
+      puts f
     end
   end
 end
