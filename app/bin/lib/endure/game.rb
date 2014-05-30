@@ -39,18 +39,43 @@ def game(name, difficulty)
   while true
     clear
     puts Rainbow('What would you like to do?').inverse
+    player.list_stats
     puts
     puts "- #{Rainbow('Start').green}"
     puts "\t - #{Rainbow('Game').blue}"
     puts
     puts "- #{Rainbow('Eat').green}"
-    player.food.each do |i|
-      puts "\t - #{Rainbow(i).blue}"
+    if player.food.empty?
+      puts "\t - #{Rainbow('[ No Food ]').blue}"
+    else
+      player.food.each do |i|
+        puts "\t - #{Rainbow(i).blue}"
+      end
     end
     puts
-    puts "- #{Rainbow('List').green}"
-    puts "\t - #{Rainbow('Stats').blue}"
-    puts "\t - #{Rainbow('Items').blue}"
+    puts "- #{Rainbow('Use').green}"
+    if player.items.empty?
+      puts "\t - #{Rainbow('[ No Items ]').blue}"
+    else
+      player.items.each do |i|
+        puts "\t - #{Rainbow(i).blue}"
+      end
+    end
+    puts
+    puts "- #{Rainbow('Trash').green}"
+    if player.food.empty?
+      puts "\t - #{Rainbow('[ No Food ]').blue}"
+    else
+      player.food.each do |i|
+        puts "\t - #{Rainbow(i).blue}"
+      end
+    end
+    if player.items.empty?
+      puts "\t - #{Rainbow('[ No Items ]').blue}"
+    else
+      player.items.each do |i|
+        puts "\t - #{Rainbow(i).blue}"
+    end
     puts
     puts "- #{Rainbow('Kill').green}"
     puts "\t - #{Rainbow('Myself').blue}"
@@ -75,15 +100,18 @@ def game(name, difficulty)
       else
         player.eat(user_input[1])
       end
-    when 'list'
-      case user_input[1]
-      when 'stats'
-        player.display_stats
-      when 'items'
-        player.list_items
-      else
-        what?
-      end
+    when 'use'
+        if user_input[1].nil?
+          what?
+        else
+          player.use(user_input[1])
+        end
+    when 'trash'
+        if user_input[1].nil?
+          what?
+        else
+          player.trash(user_input[1])
+        end
     when 'kill'
       case user_input[1]
       when 'myself'
@@ -97,4 +125,5 @@ def game(name, difficulty)
       what?
     end
   end
+end
 end

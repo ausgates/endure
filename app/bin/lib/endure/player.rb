@@ -8,7 +8,8 @@ class Player
     @friends = %w()
     @enemies = %w()
     @items = [
-      "lint"
+      "lint",
+      "bandage"
     ]
     @food = [
       "banana",
@@ -17,24 +18,23 @@ class Player
       "brownie",
       "sauce",
       "pickle",
-      "watermelon",
-      "cheese",
-      "cashews",
-      "jam",
-      "chili",
-      "potato",
-      "beans"
+      "watermelon"
+      # "cheese",
+      # "cashews",
+      # "jam",
+      # "chili",
+      # "potato",
+      # "beans"
     ]
   end
 
-  attr_reader :name, :health, :hunger, :sanity, :food
+  attr_reader :name, :health, :hunger, :sanity, :food, :items
 
-  def display_stats
+  def list_stats
     puts
     puts "Player #{Rainbow(@name).green} has #{Rainbow(@health).blue}% health"
     puts "Player #{Rainbow(@name).green} is #{Rainbow(@hunger).yellow}% fed"
     puts "Player #{Rainbow(@name).green} is #{Rainbow(@sanity).cyan}% sane"
-    pause
   end
 
   def list_items
@@ -55,21 +55,57 @@ class Player
 
   def eat(food)
     puts
-    player_name = Rainbow(@name).green
-    player_hunger = Rainbow(@hunger).yellow
-    colored_food = Rainbow(food).yellow
     if @food.include? food
       @food.delete_at(@food.index(food))
       @hunger += 10
-      player_hunger = Rainbow(@hunger).yellow
+      player_name = Rainbow(@name).green
+      colored_food = Rainbow(food).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
-      puts "Player #{player_name} is now #{player_hunger}% hungry"
       pause
     elsif @food.nil?
       puts Rainbow('You have no food left').red
       pause
     else
       puts "Player #{player_name} does not have a #{Rainbow(food).yellow}"
+      pause
+    end
+  end
+
+  def use(item)
+    def nothing
+      puts 'Nothing happened'
+    end
+    case item
+    when 'bandage'
+      player_name = Rainbow(@name).green
+      colored_item = Rainbow(item).yellow
+      if @items.include? item
+        @items.delete_at(@items.index(item))
+        @health += 10
+        puts "Player #{player_name} used #{Rainbow('1').blue} #{colored_item}"
+      elsif @items.nil?
+        puts Rainbow('You have no items')
+      else
+        puts "Player #{player_name} does not have a #{colored_item}"
+      end
+    when 'lint'
+      nothing
+    else
+      what?
+    end
+    pause
+    clear
+  end
+
+  def trash(thing)
+    if @food.include? thing
+      puts Rainbow("Are you sure you want to trash your #{thing}? [yes / no ]").red
+      @food.delete_at(@food.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
+    elsif @items.include? thing
+      puts Rainbow("Are you sure you want to trash your #{thing}? [yes / no ]").red
+      @item.delete_at(@item.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
+    else
+      puts Rainbow("You don't have a #{thing}").yellow
       pause
     end
   end
