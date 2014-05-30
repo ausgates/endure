@@ -7,3 +7,5 @@ categories, depending on how they contributed
 Ideas
 -----
 - Jadon Yeo
+- Adam Ruzik
+- Jamie Stanworth
