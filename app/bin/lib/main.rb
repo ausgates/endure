@@ -14,7 +14,7 @@ name = ARGV[0]
 difficulty_level = ARGV[1]
 
 # Require main requirements files
-require './endure/requirements.rb'
+require_relative 'endure/requirements.rb'
 
 # If the first argument is '-v', just display the version and exit endure
 if ARGV[0] == '-v'
@@ -42,4 +42,4 @@ else
 end
 
 # Call game method to start the game
-game(name, difficulty)
+%x(ruby endure/player.rb #{name} #{difficulty})

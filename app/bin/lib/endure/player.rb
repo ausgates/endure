@@ -1,3 +1,5 @@
+require_relative 'game'
+
 # Main class for Player
 class Player
   def initialize(name, health, hunger, sanity)
@@ -11,7 +13,7 @@ class Player
       "lint",
       "bandage"
     ]
-    @food = [
+    @foods = [
       "banana",
       "yogurt",
       "ketchup",
@@ -28,7 +30,7 @@ class Player
     ]
   end
 
-  attr_reader :name, :health, :hunger, :sanity, :food, :items
+  attr_reader :name, :health, :hunger, :sanity, :foods, :items
 
   def list_stats
     puts
@@ -55,14 +57,14 @@ class Player
 
   def eat(food)
     puts
-    if @food.include? food
-      @food.delete_at(@food.index(food))
+    if @foods.include? food
+      @foods.delete_at(@foods.index(food))
       @hunger += 10
       player_name = Rainbow(@name).green
       colored_food = Rainbow(food).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
       pause
-    elsif @food.nil?
+    elsif @foods.nil?
       puts Rainbow('You have no food left').red
       pause
     else
@@ -98,9 +100,9 @@ class Player
   end
 
   def trash(thing)
-    if @food.include? thing
+    if @foods.include? thing
       puts Rainbow("Are you sure you want to trash your #{thing}? [yes / no ]").red
-      @food.delete_at(@food.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
+      @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
     elsif @items.include? thing
       puts Rainbow("Are you sure you want to trash your #{thing}? [yes / no ]").red
       @item.delete_at(@item.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
@@ -131,3 +133,28 @@ class Player
     end
   end
 end
+
+name = ARGV[0]
+difficulty = ARGV[1]
+
+case difficulty
+when 'easy'
+  health = 200
+  hunger = 150
+  sanity = 175
+when 'medium'
+  health = 100
+  hunger = 100
+  sanity = 100
+when 'hard'
+  health = 50
+  hunger = 50
+  sanity = 40
+end
+
+# Do some instantiating
+player = Player.new(name, health, hunger, sanity)
+
+# We only want to run `game(player)` once
+# Right now, nothing works
+# game(player)

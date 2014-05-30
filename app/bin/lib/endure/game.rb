@@ -1,23 +1,8 @@
+require_relative 'requirements'
+
 # Main game method
-def game(name, difficulty)
-  case difficulty
-  when 'easy'
-    health = 200
-    hunger = 150
-    sanity = 175
-  when 'medium'
-    health = 100
-    hunger = 100
-    sanity = 100
-  when 'hard'
-    health = 50
-    hunger = 50
-    sanity = 40
-  end
-
-  # Do some instantiating
-  player = Player.new(name, health, hunger, sanity)
-
+def game(player_object)
+  player = player_object
   # Create 'player_name' and 'player_health' variables,
   # which contain the appropriately coloured versions of themselves
   # Make a file to 'require' these later
@@ -45,10 +30,10 @@ def game(name, difficulty)
     puts "\t - #{Rainbow('Game').blue}"
     puts
     puts "- #{Rainbow('Eat').green}"
-    if player.food.empty?
+    if player.foods.empty?
       puts "\t - #{Rainbow('[ No Food ]').blue}"
     else
-      player.food.each do |i|
+      player.foods.each do |i|
         puts "\t - #{Rainbow(i).blue}"
       end
     end
@@ -63,10 +48,10 @@ def game(name, difficulty)
     end
     puts
     puts "- #{Rainbow('Trash').green}"
-    if player.food.empty?
+    if player.foods.empty?
       puts "\t - #{Rainbow('[ No Food ]').blue}"
     else
-      player.food.each do |i|
+      player.foods.each do |i|
         puts "\t - #{Rainbow(i).blue}"
       end
     end
@@ -89,8 +74,8 @@ def game(name, difficulty)
     when 'start'
       case user_input[1]
       when 'game'
-        # Entire game
-        puts "Player #{Rainbow(player.name).green} walks into the woods.."
+        # Game
+        part_one(player)
       else
         what?
       end
@@ -126,4 +111,5 @@ def game(name, difficulty)
     end
   end
 end
+  part_one
 end
