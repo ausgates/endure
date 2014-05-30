@@ -41,5 +41,5 @@ else
   exit
 end
 
-# Call game method to start the game
+# I'm pretty sure this is a hack
 %x(ruby endure/player.rb #{name} #{difficulty})
