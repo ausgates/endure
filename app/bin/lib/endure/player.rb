@@ -34,6 +34,9 @@ class Player
 
   attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items
 
+  # Make sure sanity stays <= 100
+  @sanity = 100 if @sanity > 100
+
   def list_stats
     puts
     puts "Player #{Rainbow(@name).green} has #{Rainbow(@health).blue}% health"
@@ -159,11 +162,11 @@ def init(name, difficulty)
   when 'easy'
     health = 200
     hunger = 150
-    sanity = 175
+    sanity = 100
   when 'medium'
     health = 100
     hunger = 100
-    sanity = 100
+    sanity = 80
   when 'hard'
     health = 50
     hunger = 50

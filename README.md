@@ -35,9 +35,9 @@ difficulties
 
 | difficulty | health | hunger | sanity |
 |------------|--------|--------|--------|
-| easy       | 200%   | 150    | 175    |
-| medium     | 100%   | 100    | 100    |
-| hard       | 50%    | 40     | 40     |
+| easy       | 200%   | 150    | 100    |
+| medium     | 100%   | 100    | 80     |
+| hard       | 50%    | 40     | 50     |
 
 
 to do
@@ -65,8 +65,8 @@ to do
   - [ ] food class
   - [ ] 'other player' class
 
-- [ ] fix
-  - [ ] sane levels so the highest sane rate you can be is 100%
+- [x] fix
+  - [x] sane levels so the highest sane rate you can be is 100%
 
 - [ ] make
   - [ ] arguments with spaces work as one argument (eat cooked noodles)
