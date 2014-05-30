@@ -14,19 +14,20 @@ class Player
       "bandage"
     ]
     @foods = [
-      "banana",
-      "yogurt",
-      "ketchup",
-      "brownie",
-      "sauce",
-      "pickle",
-      "watermelon"
-      # "cheese",
-      # "cashews",
-      # "jam",
-      # "chili",
-      # "potato",
-      # "beans"
+      'banana',
+      'yogurt',
+      'ketchup',
+      'brownie',
+      'sauce',
+      'beans',
+      'pickle',
+      'mayo'
+      # 'cheese'
+      # 'cashews',
+      # 'jam',
+      # 'watermelon',
+      # 'chili',
+      # 'potato',
     ]
   end
 
@@ -134,27 +135,24 @@ class Player
   end
 end
 
-name = ARGV[0]
-difficulty = ARGV[1]
-
-case difficulty
-when 'easy'
-  health = 200
-  hunger = 150
-  sanity = 175
-when 'medium'
-  health = 100
-  hunger = 100
-  sanity = 100
-when 'hard'
-  health = 50
-  hunger = 50
-  sanity = 40
-end
-
-# Do some instantiating
-player = Player.new(name, health, hunger, sanity)
-
-# We only want to run `game(player)` once
+# We only want to run this once
 # Right now, nothing works
-# game(player)
+# Do some instantiating
+def init(name, difficulty)
+  case difficulty
+  when 'easy'
+    health = 200
+    hunger = 150
+    sanity = 175
+  when 'medium'
+    health = 100
+    hunger = 100
+    sanity = 100
+  when 'hard'
+    health = 50
+    hunger = 50
+    sanity = 40
+  end
+  player = Player.new(name, health, hunger, sanity)
+  game(player)
+end

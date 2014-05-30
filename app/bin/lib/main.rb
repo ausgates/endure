@@ -42,4 +42,4 @@ else
 end
 
 # I'm pretty sure this is a hack
-%x(ruby endure/player.rb #{name} #{difficulty})
+init(name, difficulty)
