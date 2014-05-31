@@ -103,7 +103,7 @@ def game(player_object)
         if user_input[1].nil?
           what?
         else
-          list_friends
+          player.list_friends
         end
     when 'trash'
         if user_input[1].nil?

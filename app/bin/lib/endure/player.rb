@@ -149,10 +149,26 @@ class Player
 
   def list_friends
     clear
-    @friend.each do |f|
-      puts f
+    puts Rainbow('Friends:').green
+    @friends.each do |f|
+      puts "\t - #{Rainbow(f).blue}"
     end
+    pause
   end
+
+  def add_enemy(enemy)
+    @enemies.push(enemy)
+  end
+
+  def list_enemies
+    clear
+    puts Rainbow('Enemies:').red
+    @enemies.each do |f|
+      puts "\t - #{Rainbow(f).yellow}"
+    end
+    pause
+  end
+
 end
 
 # We only want to run this once

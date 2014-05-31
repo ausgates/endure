@@ -8,13 +8,13 @@ def part_one(player_object)
               Herbert Hunter Chad Chadwick
               Jamarcus)
   friend = others[rand(others.length)]
+  player.add_friend(friend)
   others.delete_at(others.index(friend))
-  enemies = []
 
   2.times do
     enemy = others[rand(others.length)]
     others.delete_at(others.index(enemy))
-    enemies.push(enemy)
+    player.add_enemy(enemy)
   end
 
   player_name = Rainbow(player.name).green
@@ -22,9 +22,9 @@ def part_one(player_object)
 
   # Start game
   sleep 1
-  typewriter(you(player_name, "approaches a forrest with #{friend_name}."))
+  typewriter(you(player_name, "approaches a forest with #{friend_name}."))
   typewriter(say(friend_name, "It's the fastest way to the movie theatre, #{player_name}."))
-  typewriter(say(friend_name, "Trust me, I know this forrest."))
-  typewriter(you(player_name, "and #{friend_name} head into the darkness of the forrest."))
+  typewriter(say(friend_name, "Trust me, I know this forest."))
+  typewriter(you(player_name, "and #{friend_name} head into the darkness of the forest."))
   next_scene
 end
