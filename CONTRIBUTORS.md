@@ -1,11 +1,11 @@
-Contributors
+contributors
 ============
 
-A list of contributors, divided into different
+a list of contributors, divided into different
 categories, depending on how they contributed
 
-Ideas
+ideas
 -----
-- Jadon Yeo
-- Adam Ruzik
-- Jamie Stanworth
+- jadon yeo
+- adam ruzik
+- jamie stanworth
