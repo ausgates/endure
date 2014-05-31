@@ -34,9 +34,6 @@ class Player
 
   attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items
 
-  # Make sure sanity stays <= 100
-  @sanity = 100 if @sanity > 100
-
   def list_stats
     puts
     puts "Player #{Rainbow(@name).green} has #{Rainbow(@health).blue}% health"
@@ -62,6 +59,8 @@ class Player
 
   def eat(food)
     puts
+    # Make sure sanity stays <= 100
+    @sanity = 100 if @sanity > 100
     if @foods.include? food
       @foods.delete_at(@foods.index(food))
       if food == "pills"
@@ -80,6 +79,8 @@ class Player
       puts "Player #{player_name} does not have a #{Rainbow(food).yellow}"
       pause
     end
+    # Make sure sanity stays <= 100
+    @sanity = 100 if @sanity > 100
   end
 
   def use(item)
