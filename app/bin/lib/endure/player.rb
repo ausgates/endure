@@ -34,7 +34,7 @@ class Player
     ]
   end
 
-  attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items, :location
+  attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items, :location, :locations
 
   def move(location)
     if @locations.include? location
