@@ -15,19 +15,13 @@ git clone https://github.com/trommel/endure
 cd endure/
 gem install rake # if you don't already have it
 rake
-cd app/bin/lib/
-```
-
-now you can play the game
-
-```bash
-ruby main.rb [ player name ] [ difficulty level ]
+./run.sh
 ```
 
 ..or just check endure's version
 
 ```bash
-ruby main.rb -v
+ruby app/bin/lib/main.rb -v
 ```
 
 difficulties
