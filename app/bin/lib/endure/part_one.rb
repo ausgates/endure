@@ -6,15 +6,25 @@ def part_one(player_object)
   others = %w(Leon Rob Zachery Chet Keven
               Branden Kurt Burl Garry Denver
               Herbert Hunter Chad Chadwick
-              Jamarcus)
+              Jamarcus Jessie Darien Tiller
+              Sami Derek Jim Jon Gary Nick)
+
   friend = others[rand(others.length)]
+
+  while friend.include? others
+    friend = others[rand(others.length)]
+  end
+
   others.delete_at(others.index(friend))
 
-  2.times do
+  enemy = others[rand(others.length)]
+
+  while enemy.include? others
     enemy = others[rand(others.length)]
-    others.delete_at(others.index(enemy))
-    player.add_enemy(enemy)
   end
+  
+  others.delete_at(others.index(enemy))
+  player.add_enemy(enemy)
 
   player_name = Rainbow(player.name).green
   friend_name = Rainbow(friend).cyan
