@@ -73,7 +73,7 @@ class Player
         puts Rainbow(i).green
       end
     end
-    wait!
+    pause
   end
 
   def eat(food)
@@ -93,13 +93,13 @@ class Player
       player_name = Rainbow(@name).green
       colored_food = Rainbow(food).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
-      wait!
+      pause
     elsif @foods.nil?
       puts Rainbow('You have no food left').red
-      wait!
+      pause
     else
       puts "Player #{player_name} does not have a #{Rainbow(food).yellow}"
-      wait!
+      pause
     end
     # Make sure sanity stays <= 100
     @sanity = 100 if @sanity > 100
@@ -130,7 +130,7 @@ class Player
       what?
     end
     @health = 100 if @health > 100
-    wait!
+    pause
     clear
   end
 
@@ -143,7 +143,7 @@ class Player
       @item.delete_at(@item.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
     else
       puts Rainbow("You don't have a #{thing}").yellow
-      wait!
+      pause
     end
   end
 
@@ -184,7 +184,7 @@ class Player
     @friends.each do |f|
       puts "\t - #{Rainbow(f).blue}"
     end
-    wait!
+    pause
   end
 
   def add_enemy(enemy)
@@ -197,7 +197,7 @@ class Player
     @enemies.each do |f|
       puts "\t - #{Rainbow(f).yellow}"
     end
-    wait!
+    pause
   end
 end
 

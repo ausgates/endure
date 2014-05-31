@@ -64,6 +64,6 @@ end
 
 def next_scene
   loading
-  wait!
+  pause
   clear
 end

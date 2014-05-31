@@ -53,11 +53,11 @@ def part_one(player_object)
   typewriter(log('He looks drowsy.'))
   typewriter(say('Mysterious Man', 'Hello? I\'m lost.'))
   typewriter(log("The man slowly approaches #{player_name} and #{friend_name}."))
-  typewriter(say('Mysterious Man', 'I have a map. Can one of you guys help me? '))
+  typewriter(say('Mysterious Man', 'I have a map. Can one of you guys help me? (yes/no)'))
   user_input = STDIN.gets.chomp
 
   case user_input
-  when 'yes' || 'y' || 'okay' || 'okay' || 'k'
+  when 'yes'
     # you help the man
     typewriter(log("#{player_name} and #{friend_name} look over the man's shoulder to glance at the map."))
   else
@@ -74,7 +74,7 @@ def part_one(player_object)
   typewriter(log("#{player_name} struggles to break loose while one of the men takes out a familiar needle."))
   typewriter(log("The man pricks the needle into the side of #{player_name}'s neck."))
   typewriter(say('Mysterious Man', "You will forever remember the name #{Rainbow(player.enemies[0]).red}"))
-  typewriter(say(Rainbow(player.enemies[0]), 'Hahahahahahahahahahaha'))
+  typewriter(say(Rainbow(player.enemies[0]).red, Rainbow('Hahahahahahahahahahaha').red))
   player.add_enemy(player.enemies[0])
   typewriter(log("#{player.enemies[0]} has been added to #{player_name}'s enemy list."))
   typewriter(log("All #{player_name} sees is black."))
