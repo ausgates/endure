@@ -2,6 +2,8 @@ endure
 =====
 a cliché survival text-based adventure game
 
+~~i might move `endure.rb` into the root project or i might not~~
+
 usage
 -----
 
@@ -13,13 +15,19 @@ git clone https://github.com/trommel/endure
 cd endure/
 gem install rake # if you don't already have it
 rake
-./run.sh
+cd app/bin/lib/
+```
+
+now you can play the game
+
+```bash
+ruby main.rb [ player name ] [ difficulty level ]
 ```
 
 ..or just check endure's version
 
 ```bash
-ruby app/bin/lib/main.rb -v
+ruby main.rb -v
 ```
 
 difficulties
