@@ -77,7 +77,7 @@ def part_one(player_object)
     typewriter(log('The man faintly whistles.'))
   end
 
-  typewriter(log('Suddenly, four men wearing black clothing jump out behind a bush.'))
+  typewriter(log('Suddenly, four men wearing black clothing jump out from behind a bush.'))
   typewriter(log("Two of the men grab #{friend_name} and pin him to the ground."))
   typewriter(log("One of the men takes out a needle and pricks it into the side of #{friend_name}'s neck."))
   typewriter(log("#{friend_name}'s eyes close."))
