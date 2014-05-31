@@ -11,18 +11,21 @@ def part_one(player_object)
 
   friend = others[rand(others.length)]
 
-  while friend.include? others
-    friend = others[rand(others.length)]
-  end
 
+  others.each do |o|
+    while friend.include? o
+      friend = others[rand(others.length)]
+    end
+  end
   others.delete_at(others.index(friend))
 
   enemy = others[rand(others.length)]
 
-  while enemy.include? others
-    enemy = others[rand(others.length)]
+  others.each do |o|
+    while enemy.include? o
+      enemy = others[rand(others.length)]
+    end
   end
-
   others.delete_at(others.index(enemy))
   player.add_enemy(enemy)
 
