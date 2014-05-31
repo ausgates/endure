@@ -32,7 +32,7 @@ end
 def typewriter(input)
   input.length.times do |i|
     print input[i]
-    sleep 0.1
+    sleep 0.2
   end
   puts
 end

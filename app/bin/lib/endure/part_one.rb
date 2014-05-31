@@ -61,8 +61,9 @@ def part_one(player_object)
   typewriter(log("#{player_name} struggles to break loose while one of the men takes out a familiar needle."))
   typewriter(log("The man pricks the needle into the side of #{player_name}'s neck."))
   typewriter(say('Mysterious Man', "You will forever remember the name #{Rainbow(player.enemies[0]).red}"))
+  typewriter(say(Rainbow(player.enemies[0]), 'Hahahahahahahahahahaha'))
   player.add_enemy(player.enemies[0])
-  typewriter(log("#{player.enemy[0]} has been added to #{player_name}'s enemy list."))
+  typewriter(log("#{player.enemies[0]} has been added to #{player_name}'s enemy list."))
   typewriter(log("All #{player_name} sees is black."))
 
 
