@@ -134,6 +134,12 @@ class Player
       puts "Player #{Rainbow(@name).green} died with #{Rainbow(@health).blue}% health"
       puts "Player #{Rainbow(@name).green} was #{Rainbow(@hunger).yellow}% fed"
       puts "Player #{Rainbow(@name).green} was #{Rainbow(@sanity).cyan}% crazy"
+      @friends.each do |f|
+        puts "Player #{Rainbow(@name).green} was friends with #{Rainbow(f).yellow}"
+      end
+      @enemies.each do |e|
+        puts "Player #{Rainbow(@name).green} was enemies with #{Rainbow(e).red}"
+      end
       @items.each do |i|
         puts "Player #{Rainbow(@name).green} had #{Rainbow(i).yellow}"
       end
@@ -168,7 +174,6 @@ class Player
     end
     pause
   end
-
 end
 
 # We only want to run this once
@@ -188,6 +193,10 @@ def init(name, difficulty)
     health = 50
     hunger = 50
     sanity = 40
+  when 'hard as my dick'
+    health = 1
+    hunger = 2
+    sanity = 3
   end
   player = Player.new(name, health, hunger, sanity)
   game(player)

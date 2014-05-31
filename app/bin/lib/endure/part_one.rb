@@ -8,7 +8,6 @@ def part_one(player_object)
               Herbert Hunter Chad Chadwick
               Jamarcus)
   friend = others[rand(others.length)]
-  player.add_friend(friend)
   others.delete_at(others.index(friend))
 
   2.times do
@@ -23,8 +22,54 @@ def part_one(player_object)
   # Start game
   sleep 1
   typewriter(you(player_name, "approaches a forest with #{friend_name}."))
+  player.add_friend(friend)
+  typewriter(log("#{friend_name} has been added to #{player_name}'s friend list."))
   typewriter(say(friend_name, "It's the fastest way to the movie theatre, #{player_name}."))
   typewriter(say(friend_name, "Trust me, I know this forest."))
   typewriter(you(player_name, "and #{friend_name} head into the darkness of the forest."))
+
+
   next_scene
+
+
+  typewriter(log("In only a couple of minutes, #{player_name} and #{friend_name} are surrounded by nature."))
+  typewriter(say(player_name, "#{friend_name}, where are we?"))
+  typewriter(say(friend, "I have no idea, #{player_name}."))
+  typewriter(log('There\'s a rustling in the bushes.'))
+  typewriter(log('A man walks out of the bushes.')) # => this is player.enemies[0]
+  typewriter(log('He looks drowsy.'))
+  typewriter(say('Mysterious Man', 'Hello? I\'m lost.'))
+  typewriter(log("The man slowly approaches #{player_name} and #{friend_name}."))
+  typewriter(say('Mysterious Man', 'I have a map. Can one of you guys help me? '))
+  user_input = STDIN.gets.chomp
+
+  case user_input
+  when 'yes' || 'y' || 'okay' || 'okay' || 'k'
+    # you help the man
+    typewriter(log("#{player_name} and #{friend_name} look over the man's shoulder to glance at the map."))
+  else
+    # you don't help the man
+    typewriter(say('Mysterious Man', 'Wrong answer.'))
+    typewriter(log('The man faintly whistles.'))
+  end
+
+  typewriter(log('Suddenly, four men wearing black clothing jump out behind a bush.'))
+  typewriter(log("Two of the men grab #{friend_name} and pin him to the ground."))
+  typewriter(log("One of the men takes out a needle and pricks it into the side of #{friend_name}'s neck."))
+  typewriter(log("#{friend_name}'s eyes close."))
+  typewriter(log("Two other men grab #{player_name} and hold his hands behind his back."))
+  typewriter(log("#{player_name} struggles to break loose while one of the men takes out a familiar needle."))
+  typewriter(log("The man pricks the needle into the side of #{player_name}'s neck."))
+  typewriter(say('Mysterious Man', "You will forever remember the name #{Rainbow(player.enemies[0]).red}"))
+  player.add_enemy(player.enemies[0])
+  typewriter(log("#{player.enemy[0]} has been added to #{player_name}'s enemy list."))
+  typewriter(log("All #{player_name} sees is black."))
+
+
+  next_scene
+
+  typewriter(log("#{player_name} wakes up on a beach."))
+  typewriter(log("#{friend_name} is nowhere to be seen."))
+  typewriter(log("#{player_name} does not recognize where he is."))
+  typewriter(log("#{player_name} stands up."))
 end

@@ -49,11 +49,16 @@ def say(player, message)
 end
 
 def log(log)
-  Rainbow(log).yellow
+  log
 end
 
-def you (name, message)
+def you(name, message)
   return "#{name} #{message}"
+  wait!
+end
+
+def normaly(message)
+  return message
   wait!
 end
 

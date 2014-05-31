@@ -11,7 +11,7 @@
 
 # Set 'name' and 'difficulty_level' to the first and second arguments
 name = ARGV[0]
-difficulty_level = ARGV[1]
+difficulty_level = ARGV[1].downcase
 
 # Require main requirements files
 require_relative 'endure/requirements.rb'
@@ -36,6 +36,8 @@ when 'medium'
   difficulty = 'medium'
 when 'hard'
   difficulty = 'hard'
+when 'hard_as_my_dick'
+  difficulty = 'hard as my dick'
 else
   puts "#{Rainbow('Error:').red.underline} Unrecognized difficulty"
   exit

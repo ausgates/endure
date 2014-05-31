@@ -54,6 +54,7 @@ def game(player_object)
     end
     puts "- #{Rainbow('List').green}"
     puts "\t - #{Rainbow('Friends').blue}"
+    puts "\t - #{Rainbow('Enemies').blue}"
     puts
     puts "- #{Rainbow('Trash').green}"
     if player.foods.empty?
@@ -102,8 +103,12 @@ def game(player_object)
     when 'list'
         if user_input[1].nil?
           what?
-        else
+        elsif user_input[1] == 'friends'
           player.list_friends
+        elsif user_input[1] == 'enemies'
+          player.list_enemies
+        else
+          what?
         end
     when 'trash'
         if user_input[1].nil?
