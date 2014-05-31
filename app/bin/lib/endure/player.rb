@@ -61,6 +61,7 @@ class Player
     puts
     # Make sure sanity stays <= 100
     @sanity = 100 if @sanity > 100
+    @hunger = 100 if @hunger > 100
     if @foods.include? food
       @foods.delete_at(@foods.index(food))
       if food == "pills"
@@ -81,9 +82,11 @@ class Player
     end
     # Make sure sanity stays <= 100
     @sanity = 100 if @sanity > 100
+    @hugner = 100 if @hunger > 100
   end
 
   def use(item)
+    @health = 100 if @health > 100
     def nothing
       puts 'Nothing happened'
     end
@@ -105,6 +108,7 @@ class Player
     else
       what?
     end
+    @health = 100 if @health > 100
     pause
     clear
   end
@@ -182,18 +186,18 @@ end
 def init(name, difficulty)
   case difficulty
   when 'easy'
-    health = 200
-    hunger = 150
-    sanity = 100
-  when 'medium'
     health = 100
     hunger = 100
-    sanity = 80
-  when 'hard'
+    sanity = 100
+  when 'medium'
     health = 50
     hunger = 50
-    sanity = 40
-  when 'hard as my dick'
+    sanity = 50
+  when 'hard'
+    health = 25
+    hunger = 25
+    sanity = 25
+  when 'arm fighter'
     health = 1
     hunger = 2
     sanity = 3

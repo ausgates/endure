@@ -36,8 +36,8 @@ when 'medium'
   difficulty = 'medium'
 when 'hard'
   difficulty = 'hard'
-when 'hard_as_my_dick'
-  difficulty = 'hard as my dick'
+when 'arm fighter'
+  difficulty = 'arm fighter'
 else
   puts "#{Rainbow('Error:').red.underline} Unrecognized difficulty"
   exit
