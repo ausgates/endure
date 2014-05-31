@@ -20,11 +20,11 @@ class Player
       'yogurt',
       'ketchup',
       'brownie',
-      'sauce',
-      'beans',
       'pills',
-      'pickle',
-      'mayo'
+      'sauce',
+      'beans'
+      # 'pickle',
+      # 'mayo'
       # 'cheese'
       # 'cashews',
       # 'jam',
@@ -73,7 +73,7 @@ class Player
         puts Rainbow(i).green
       end
     end
-    pause
+    wait!
   end
 
   def eat(food)
@@ -83,21 +83,23 @@ class Player
     @hunger = 100 if @hunger > 100
     if @foods.include? food
       @foods.delete_at(@foods.index(food))
-      if food == "pills"
+      if food == 'pills'
         @sanity += 10
+      elsif food == 'all'
+        # eat all food
       else
         @hunger += 10
       end
       player_name = Rainbow(@name).green
       colored_food = Rainbow(food).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
-      pause
+      wait!
     elsif @foods.nil?
       puts Rainbow('You have no food left').red
-      pause
+      wait!
     else
       puts "Player #{player_name} does not have a #{Rainbow(food).yellow}"
-      pause
+      wait!
     end
     # Make sure sanity stays <= 100
     @sanity = 100 if @sanity > 100
@@ -128,7 +130,7 @@ class Player
       what?
     end
     @health = 100 if @health > 100
-    pause
+    wait!
     clear
   end
 
@@ -141,7 +143,7 @@ class Player
       @item.delete_at(@item.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
     else
       puts Rainbow("You don't have a #{thing}").yellow
-      pause
+      wait!
     end
   end
 
@@ -182,7 +184,7 @@ class Player
     @friends.each do |f|
       puts "\t - #{Rainbow(f).blue}"
     end
-    pause
+    wait!
   end
 
   def add_enemy(enemy)
@@ -195,7 +197,7 @@ class Player
     @enemies.each do |f|
       puts "\t - #{Rainbow(f).yellow}"
     end
-    pause
+    wait!
   end
 end
 
