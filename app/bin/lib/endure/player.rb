@@ -7,6 +7,8 @@ class Player
     @health = health
     @hunger = hunger
     @sanity = sanity
+    @location = "Starting Point"
+    @locations = %w()
     @friends = %w()
     @enemies = %w()
     @items = [
@@ -32,7 +34,24 @@ class Player
     ]
   end
 
-  attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items
+  attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items, :location
+
+  def move(location)
+    if @locations.include? location
+      @location = location
+      puts Rainbow("Moved to #{@location}").green
+    else
+      puts Rainbow("You cannot move to #{location}")
+    end
+  end
+
+  def add_location(location)
+    if @locations.include? location
+      # it already exists
+    else
+      @locations.push location
+    end
+  end
 
   def list_stats
     puts

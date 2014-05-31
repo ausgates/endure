@@ -22,7 +22,7 @@ def part_one(player_object)
   while enemy.include? others
     enemy = others[rand(others.length)]
   end
-  
+
   others.delete_at(others.index(enemy))
   player.add_enemy(enemy)
 
@@ -78,7 +78,8 @@ def part_one(player_object)
 
 
   next_scene
-
+  person.add_location('Beach')
+  typewriter(log(Rainbow("#{location} has been added to your locations").red))
   typewriter(log("#{player_name} wakes up on a beach."))
   typewriter(log("#{friend_name} is nowhere to be seen."))
   typewriter(log("#{player_name} does not recognize where he is."))

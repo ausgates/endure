@@ -35,6 +35,14 @@ def game(player_object)
     puts "- #{Rainbow('Start').green}"
     puts "\t - #{Rainbow('Game').blue}"
     puts
+    puts "- #{Rainbow('Move').green}"
+    if player.locations.empty?
+      puts "\t - #{Rainbow('[ No Locations ]').blue}"
+    else
+        player.locations.each do |i|
+          puts "\t - #{Rainbow(i).blue}"
+        end
+      end
     puts "- #{Rainbow('Eat').green}"
     if player.foods.empty?
       puts "\t - #{Rainbow('[ No Food ]').blue}"
@@ -110,6 +118,12 @@ def game(player_object)
         else
           what?
         end
+    when 'move'
+      if user_input[1].nil?
+        what?
+      else
+        player.move(user_input[1])
+      end
     when 'trash'
         if user_input[1].nil?
           what?
