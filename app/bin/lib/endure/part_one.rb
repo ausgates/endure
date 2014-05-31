@@ -7,7 +7,8 @@ def part_one(player_object)
               Branden Kurt Burl Garry Denver
               Herbert Hunter Chad Chadwick
               Jamarcus Jessie Darien Tiller
-              Sami Derek Jim Jon Gary Nick)
+              Sami Derek Jim Jon Gary Nick
+              Skip Sport)
 
   friend = others[rand(others.length)]
 
@@ -39,6 +40,9 @@ def part_one(player_object)
   typewriter(log("#{friend_name} has been added to #{player_name}'s friend list."))
   typewriter(say(friend_name, "It's the fastest way to the movie theatre, #{player_name}."))
   typewriter(say(friend_name, "Trust me, I know this forest."))
+  sleep 0.5
+  puts
+  sleep 0.4
   typewriter(you(player_name, "and #{friend_name} head into the darkness of the forest."))
 
 
@@ -55,6 +59,12 @@ def part_one(player_object)
   typewriter(log("The man slowly approaches #{player_name} and #{friend_name}."))
   typewriter(say('Mysterious Man', 'I have a map. Can one of you guys help me? (yes/no)'))
   user_input = STDIN.gets.chomp
+
+  while user_input.nil?
+    typewriter(log('The man cups his hand to his ear.'))
+    typewriter(say('Mysterious Man:', 'What did you say?'))
+    user_input = STDIN.gets.chomp
+  end
 
   case user_input
   when 'yes'
@@ -82,7 +92,7 @@ def part_one(player_object)
 
   next_scene
   player.add_location('Beach')
-  typewriter(log(Rainbow("#{location} has been added to your locations").red))
+  typewriter(log(Rainbow("#{player.location} has been added to your locations").red))
   typewriter(log("#{player_name} wakes up on a beach."))
   typewriter(log("#{friend_name} is nowhere to be seen."))
   typewriter(log("#{player_name} does not recognize where he is."))
