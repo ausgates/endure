@@ -51,7 +51,7 @@ def part_one(player_object)
 
   typewriter(log("In only a couple of minutes, #{player_name} and #{friend_name} are surrounded by nature."))
   typewriter(say(player_name, "#{friend_name}, where are we?"))
-  typewriter(say(friend, "I have no idea, #{player_name}."))
+  typewriter(say(friend_name, "I have no idea, #{player_name}."))
   typewriter(log('There\'s a rustling in the bushes.'))
   typewriter(log('A man walks out of the bushes.')) # => this is player.enemies[0]
   typewriter(log('He looks drowsy.'))
@@ -60,11 +60,12 @@ def part_one(player_object)
   typewriter(say('Mysterious Man', 'I have a map. Can one of you guys help me? (yes/no)'))
   user_input = STDIN.gets.chomp
 
-  while user_input.nil?
-    typewriter(log('The man cups his hand to his ear.'))
-    typewriter(say('Mysterious Man:', 'What did you say?'))
-    user_input = STDIN.gets.chomp
-  end
+  # WHY WON'T THIS WORK?
+  # while user_input.nil?
+  #   typewriter(log('The man cups his hand to his ear.'))
+  #   typewriter(say('Mysterious Man:', 'What did you say?'))
+  #   user_input = STDIN.gets.chomp
+  # end
 
   case user_input
   when 'yes'
@@ -83,18 +84,20 @@ def part_one(player_object)
   typewriter(log("Two other men grab #{player_name} and hold his hands behind his back."))
   typewriter(log("#{player_name} struggles to break loose while one of the men takes out a familiar needle."))
   typewriter(log("The man pricks the needle into the side of #{player_name}'s neck."))
-  typewriter(say('Mysterious Man', "You will forever remember the name #{Rainbow(player.enemies[0]).red}"))
-  typewriter(say(Rainbow(player.enemies[0]).red, Rainbow('Hahahahahahahahahahaha').red))
+  typewriter(say('Mysterious Man', "You will forever remember the name #{Rainbow(player.enemies[0]).red}."))
+  typewriter(say(Rainbow(player.enemies[0]).red, Rainbow('Hahahahahahahahahahahhahahahahahaha').red))
   player.add_enemy(player.enemies[0])
-  typewriter(log("#{player.enemies[0]} has been added to #{player_name}'s enemy list."))
+  typewriter(log("#{player.enemies[0]} has been added to #{player_name}'s #{Rainbow('enemies').red} list."))
   typewriter(log("All #{player_name} sees is black."))
 
 
   next_scene
-  player.add_location('Beach')
-  typewriter(log(Rainbow("#{player.location} has been added to your locations").red))
   typewriter(log("#{player_name} wakes up on a beach."))
+  player.add_location('Beach')
+  player.move('Beach')
+  typewriter(log("#{Rainbow('\'Beach\'')} has been added to your locations"))
   typewriter(log("#{friend_name} is nowhere to be seen."))
   typewriter(log("#{player_name} does not recognize where he is."))
   typewriter(log("#{player_name} stands up."))
+  next_scene
 end

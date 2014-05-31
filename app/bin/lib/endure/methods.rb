@@ -32,14 +32,14 @@ end
 def typewriter(input)
   input.length.times do |i|
     print input[i]
-    # sleep 0.05
+    sleep 0.05
   end
   puts
 end
 
 def what?
   Rainbow('What?').yellow
-  pause
+  sleep 0.5
   clear
 end
 

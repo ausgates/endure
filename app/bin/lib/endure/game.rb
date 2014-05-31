@@ -31,6 +31,7 @@ def game(player_object)
     puts Rainbow('endure').red.underline
     puts Rainbow('What would you like to do?').inverse
     player.list_stats
+    puts "You are currently at the #{Rainbow(player.location).bright}"
     puts
     puts "- #{Rainbow('Start').green}"
     puts "\t - #{Rainbow('Game').blue}"
