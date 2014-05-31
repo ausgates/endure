@@ -44,4 +44,4 @@ license
 
 don't steal this game or its code. play it for fun.
 
-© josh trommel 2014
+©josh trommel 2014
