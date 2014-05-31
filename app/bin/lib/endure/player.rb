@@ -40,8 +40,10 @@ class Player
     if @locations.include? location
       @location = location
       puts Rainbow("Moved to #{@location}").green
+      pause
     else
       puts Rainbow("You cannot move to #{location}")
+      pause
     end
   end
 
