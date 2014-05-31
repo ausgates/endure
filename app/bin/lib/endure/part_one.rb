@@ -81,7 +81,7 @@ def part_one(player_object)
 
 
   next_scene
-  person.add_location('Beach')
+  player.add_location('Beach')
   typewriter(log(Rainbow("#{location} has been added to your locations").red))
   typewriter(log("#{player_name} wakes up on a beach."))
   typewriter(log("#{friend_name} is nowhere to be seen."))

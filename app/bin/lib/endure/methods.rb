@@ -32,7 +32,7 @@ end
 def typewriter(input)
   input.length.times do |i|
     print input[i]
-    sleep 0.05
+    # sleep 0.05
   end
   puts
 end
@@ -57,13 +57,13 @@ def you(name, message)
   wait!
 end
 
-def normaly(message)
+def normally(message)
   return message
   wait!
 end
 
 def next_scene
   loading
-  pause
+  wait!
   clear
 end
