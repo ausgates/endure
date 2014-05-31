@@ -39,28 +39,9 @@ difficulties
 | medium     | 100%   | 100    | 80     |
 | hard       | 50%    | 40     | 50     |
 
+license
+-------
 
-to do
------
+don't steal this game or its code. play it for fun.
 
-- [x] completely re-code endure so player can type in what they want-
-  for example
-  ```
-  What would you like to do?
-  >> eat yogurt
-
-  Player josh ate 1 yogurt
-  Player josh is now 110% hungry
-  ```
-
-- [ ] create method for
-  - [x] when user dies, print player stats
-  - [x] displaying player's current inventory
-  - [ ] displaying player's friends
-  - [ ] displaying player's enemies
-
-- [ ] add
-  - [ ] an actual story
-  - [ ] zombies, because in this day and age, nobody will like the game without them
-  - [ ] food class
-  - [ ] 'other player' class
+© josh trommel 2014
