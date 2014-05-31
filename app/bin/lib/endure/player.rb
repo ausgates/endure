@@ -7,7 +7,7 @@ class Player
     @health = health
     @hunger = hunger
     @sanity = sanity
-    @location = "Starting Point"
+    @location = 'Starting Point'
     @locations = %w()
     @friends = %w()
     @enemies = %w()
@@ -22,7 +22,7 @@ class Player
       'brownie',
       'pills',
       'sauce',
-      'beans'
+      # 'beans'
       # 'pickle',
       # 'mayo'
       # 'cheese'
@@ -40,11 +40,13 @@ class Player
     if @locations.include? location
       @location = location
       puts Rainbow("Moved to #{@location}").green
-      pause
     else
-      puts Rainbow("You cannot move to #{location}.")
-      pause
+      puts Rainbow("You cannot move to #{location}")
     end
+  end
+
+  def move_silent(location)
+      @location = location
   end
 
   def add_location(location)
