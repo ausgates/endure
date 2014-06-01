@@ -9,7 +9,7 @@ with an 'enhancement' label and the idea as the title. you can add more
 information about the idea in the description input. then, make a pull request of the repo
 with an addition to your name added to the list below with the idea next to it. 
 i'll accept the idea and list you as a contributer even if your idea is trash- 
-it's just a matter of it i put it into the game
+it's just a matter of if i put it into the game
 
 ideas
 -----
