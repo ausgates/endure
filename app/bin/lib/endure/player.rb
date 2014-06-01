@@ -146,8 +146,9 @@ class Player
       @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
     elsif @items.include? thing
       puts Rainbow("Are you sure you want to trash your #{thing}? [yes/no]").red
-      if thing == 'lint' || STDIN.gets.chomp == 'yes'
-        puts Rainbow("#{Rainbow(@player).green} couldn't get the lint out of his pocket. It's stuck.")
+      user_input = STDIN.gets.chomp
+      if thing == 'lint' && user_input == 'yes'
+        puts Rainbow("#{Rainbow(@name).green} couldn't get the lint out of his pocket. It's stuck.")
         pause
       else
         @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
