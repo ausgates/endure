@@ -84,6 +84,8 @@ class Player
 
   def eat(food)
     puts
+    player_name = Rainbow(@name).green
+    colored_food = Rainbow(food).yellow
     # Make sure sanity stays <= 100
     @sanity = 100 if @sanity > 100
     @hunger = 100 if @hunger > 100
@@ -96,8 +98,6 @@ class Player
       else
         @hunger += 10
       end
-      player_name = Rainbow(@name).green
-      colored_food = Rainbow(food).yellow
       puts "Player #{player_name} ate #{Rainbow('1').blue} #{colored_food}"
       pause
     elsif @foods.nil?
@@ -142,11 +142,11 @@ class Player
 
   def trash(thing)
     if @foods.include? thing
-      puts Rainbow("Are you sure you want to trash your #{thing}? [yes / no ]").red
-      @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
+      puts Rainbow("Are you sure you want to trash your #{thing}? [y/n ]").red
+      @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'y'
     elsif @items.include? thing
-      puts Rainbow("Are you sure you want to trash your #{thing}? [yes / no ]").red
-      @item.delete_at(@item.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
+      puts Rainbow("Are you sure you want to trash your #{thing}? [y/n]").red
+      @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'y'
     else
       puts Rainbow("You don't have a #{thing}").yellow
       pause
