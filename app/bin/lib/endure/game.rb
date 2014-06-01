@@ -33,7 +33,7 @@ def game(player_object)
     player.list_stats
     puts "You are currently at the #{Rainbow(player.location).bright}"
     puts
-    puts "- #{Rainbow('Start').green}"
+    puts "- #{Rainbow('Play').green}"
     puts "\t - #{Rainbow('Game').blue}"
     puts
     puts "- #{Rainbow('Move').green}"
@@ -89,11 +89,15 @@ def game(player_object)
 
     case user_input[0]
 
-    when 'start'
+    when 'play'
       case user_input[1]
       when 'game'
         # Game
-        part_one(player)
+        case player.location
+        when 'Starting Point'
+          part_one(player)
+        when 'Beach'
+          beach(player)
       else
         what?
       end
@@ -145,5 +149,5 @@ def game(player_object)
     end
   end
 end
-  part_one
+end
 end
