@@ -33,9 +33,9 @@ difficulties
 
 | difficulty | health | hunger | sanity |
 |------------|--------|--------|--------|
-| easy       | 200%   | 150    | 100    |
-| medium     | 100%   | 100    | 80     |
-| hard       | 50%    | 40     | 50     |
+| easy       | 100%   | 100    | 100    |
+| medium     | 50%    | 50     | 50     |
+| hard       | 25%    | 25     | 25     |
 
 license
 -------
