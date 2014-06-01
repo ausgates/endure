@@ -253,8 +253,8 @@ def init(name, difficulty)
   others.delete_at(others.index(enemy))
   player.add_enemy(enemy)
 
+  player = Player.new(name, health, hunger, sanity)
   player_name = Rainbow(player.name).green
   friend_name = Rainbow(friend).cyan
-  player = Player.new(name, health, hunger, sanity)
   game(player)
 end
