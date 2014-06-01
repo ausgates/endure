@@ -8,7 +8,7 @@ def part_one(player_object)
               Herbert Hunter Chad Chadwick
               Jamarcus Jessie Darien Tiller
               Sami Derek Jim Jon Gary Nick
-              Skip Sport)
+              Skip Sport Cameron Brad Douglas)
 
   friend = others[rand(others.length)]
 
