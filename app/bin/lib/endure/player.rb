@@ -148,6 +148,7 @@ class Player
       puts Rainbow("Are you sure you want to trash your #{thing}? [yes/no]").red
       if thing == 'lint'
         puts Rainbow("#{@name} couldn't get the lint out of his pocket. It's stuck.")
+        pause
       else
         @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
       end
