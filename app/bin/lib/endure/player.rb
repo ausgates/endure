@@ -12,16 +12,16 @@ class Player
     @friends = %w()
     @enemies = %w()
     @items = [
-      # "lint",
+      "lint",
       "bandage"
     ]
     @foods = [
       'banana',
-      # 'yogurt',
-      # 'ketchup',
-      # 'brownie',
-      # 'pills',
-      # 'sauce',
+      'yogurt',
+      'ketchup',
+      'brownie',
+      'pills',
+      'sauce',
       # 'beans'
       # 'pickle',
       # 'mayo'
@@ -229,30 +229,6 @@ def init(name, difficulty)
     hunger = 2
     sanity = 3
   end
-  others = %w(Leon Rob Zachery Chet Keven
-              Branden Kurt Burl Garry Denver
-              Herbert Hunter Chad Chadwick
-              Jamarcus Jessie Darien Tiller
-              Sami Derek Jim Jon Gary Nick
-              Skip Sport)
-
-  friend = others[rand(others.length)]
-
-  others.each do |o|
-    friend = others[rand(others.length)] while friend.include? o
-  end
-  others.delete_at(others.index(friend))
-
-  enemy = others[rand(others.length)]
-
-  others.each do |o|
-    enemy = others[rand(others.length)] while enemy.include? o
-  end
-  others.delete_at(others.index(enemy))
-
   player = Player.new(name, health, hunger, sanity)
-  player_name = Rainbow(@name).green
-  friend_name = Rainbow(friend).cyan
-  player.add_enemy(enemy)
   game(player)
 end

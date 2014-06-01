@@ -31,9 +31,8 @@ def game(player_object)
     puts Rainbow('endure').red.underline
     puts Rainbow('What would you like to do?').inverse
     player.list_stats
-    puts "You are currently at the #{Rainbow(player.location).bright}"
     puts
-    puts "- #{Rainbow('Play').green}"
+    puts "- #{Rainbow('Start').green}"
     puts "\t - #{Rainbow('Game').blue}"
     puts
     puts "- #{Rainbow('Move').green}"
@@ -89,15 +88,11 @@ def game(player_object)
 
     case user_input[0]
 
-    when 'play'
+    when 'start'
       case user_input[1]
       when 'game'
         # Game
-        case player.location
-        when 'Starting Point'
-          part_one(player)
-        when 'Beach'
-          beach(player)
+        part_one(player)
       else
         what?
       end
@@ -149,5 +144,5 @@ def game(player_object)
     end
   end
 end
-end
+  part_one
 end
