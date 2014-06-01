@@ -142,11 +142,15 @@ class Player
 
   def trash(thing)
     if @foods.include? thing
-      puts Rainbow("Are you sure you want to trash your #{thing}? [y/n ]").red
-      @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'y'
+      puts Rainbow("Are you sure you want to trash your #{thing}? [yes/no]").red
+      @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
     elsif @items.include? thing
-      puts Rainbow("Are you sure you want to trash your #{thing}? [y/n]").red
-      @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'y'
+      puts Rainbow("Are you sure you want to trash your #{thing}? [yes/no]").red
+      if thing == 'lint'
+        puts Rainbow("#{@name} couldn't get the lint out of his pocket. It's stuck.")
+      else
+        @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'yes'
+      end
     else
       puts Rainbow("You don't have a #{thing}").yellow
       pause
