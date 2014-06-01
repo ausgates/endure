@@ -229,8 +229,6 @@ def init(name, difficulty)
     hunger = 2
     sanity = 3
   end
-  player = player_object
-  clear
   others = %w(Leon Rob Zachery Chet Keven
               Branden Kurt Burl Garry Denver
               Herbert Hunter Chad Chadwick
@@ -251,10 +249,10 @@ def init(name, difficulty)
     enemy = others[rand(others.length)] while enemy.include? o
   end
   others.delete_at(others.index(enemy))
-  player.add_enemy(enemy)
 
   player = Player.new(name, health, hunger, sanity)
-  player_name = Rainbow(player.name).green
+  player_name = Rainbow(@name).green
   friend_name = Rainbow(friend).cyan
+  player.add_enemy(enemy)
   game(player)
 end
