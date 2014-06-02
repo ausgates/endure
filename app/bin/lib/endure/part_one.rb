@@ -90,15 +90,18 @@ def starting_point(player_object)
   typewriter(log("#{player_name} wakes up on a beach."))
   player.add_location('Beach')
   player.move_silent('Beach')
-  typewriter(log("#{Rainbow('Beach').bright} has been added to your locations."))
+  typewriter(log("#{Rainbow('Beach').bright} has been added to #{player_name} locations."))
   typewriter(log("#{friend_name} is nowhere to be seen."))
   typewriter(log("#{player_name} does not recognize where he is."))
   typewriter(log("#{player_name} stands up."))
   next_scene
 
   def beach(player_object)
+    clear
     player = player_object
-    if player.name == 'jadon' || player.name == 'bobby' || player.name == 'bob'
+    player_name = Rainbow(player.name).green
+    friend_name = Rainbow(player.friends[0]).blue
+    if player.name == 'bobby'
       # it's mr. jadon yeo
       typewriter(log("#{player_name} has a stick in his butt."))
       typewriter(log("Does #{player_name} try to get the stick out of his butt? (yes/no)"))
