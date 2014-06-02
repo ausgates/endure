@@ -52,11 +52,7 @@ class Player
   end
 
   def add_location(location)
-    if @locations.include? location
-      # it already exists
-    else
-      @locations.push location
-    end
+    @locations.push location
   end
 
   def list_stats
@@ -64,6 +60,7 @@ class Player
     puts "Player #{Rainbow(@name).green} has #{Rainbow(@health).blue}% health"
     puts "Player #{Rainbow(@name).green} is #{Rainbow(@hunger).yellow}% fed"
     puts "Player #{Rainbow(@name).green} is #{Rainbow(@sanity).cyan}% sane"
+    puts "Player #{Rainbow(@name).green} is at the #{Rainbow(@location).bright}"
   end
 
   def list_items
@@ -145,8 +142,13 @@ class Player
       puts Rainbow("Are you sure you want to trash your #{thing}? [y/n ]").red
       @foods.delete_at(@foods.index(thing)) if STDIN.gets.chomp.downcase == 'y'
     elsif @items.include? thing
-      puts Rainbow("Are you sure you want to trash your #{thing}? [y/n]").red
-      @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'y'
+      if thing == 'lint'
+        puts 'The lint is stuck.'
+        pause
+      else
+        puts Rainbow("Are you sure you want to trash your #{thing}? [y/n]").red
+        @items.delete_at(@items.index(thing)) if STDIN.gets.chomp.downcase == 'y'
+      end
     else
       puts Rainbow("You don't have a #{thing}").yellow
       pause

@@ -1,6 +1,6 @@
 require_relative 'requirements'
 
-def part_one(player_object)
+def starting_point(player_object)
   player = player_object
   clear
   others = %w(Leon Rob Zachery Chet Keven
@@ -11,35 +11,28 @@ def part_one(player_object)
               Skip Sport Cameron Brad Douglas)
 
   friend = others[rand(others.length)]
-
-
   others.each do |o|
-    while friend.include? o
-      friend = others[rand(others.length)]
-    end
+    friend = others[rand(others.length)] while friend.include? o
   end
   others.delete_at(others.index(friend))
 
   enemy = others[rand(others.length)]
 
   others.each do |o|
-    while enemy.include? o
-      enemy = others[rand(others.length)]
-    end
+    enemy = others[rand(others.length)] while enemy.include? o
   end
   others.delete_at(others.index(enemy))
   player.add_enemy(enemy)
 
   player_name = Rainbow(player.name).green
   friend_name = Rainbow(friend).cyan
-
   # Start game
   sleep 1
   typewriter(you(player_name, "approaches a forest with #{friend_name}."))
   player.add_friend(friend)
-  typewriter(log("#{friend_name} has been added to #{player_name}'s friend list."))
+  typewriter(log("#{friend_name} has been added to #{player_name}'s friends list."))
   typewriter(say(friend_name, "It's the fastest way to the movie theatre, #{player_name}."))
-  typewriter(say(friend_name, "Trust me, I know this forest."))
+  typewriter(say(friend_name, 'Trust me, I know this forest.'))
   sleep 0.5
   puts
   sleep 0.4
@@ -57,7 +50,9 @@ def part_one(player_object)
   typewriter(log('He looks drowsy.'))
   typewriter(say('Mysterious Man', 'Hello? I\'m lost.'))
   typewriter(log("The man slowly approaches #{player_name} and #{friend_name}."))
-  typewriter(say('Mysterious Man', 'I have a map. Can one of you guys help me? (yes/no)'))
+  typewriter(say('Mysterious Man', 'I have a map.'))
+  typewriter(log("The man walks towards #{player_name} and points directly at him."))
+  typewriter(say('Myserious Man', "Can #{Rainbow('you').green} help me? (yes/no)"))
   user_input = STDIN.gets.chomp
 
   # WHY WON'T THIS WORK?
@@ -85,9 +80,9 @@ def part_one(player_object)
   typewriter(log("#{player_name} struggles to break loose while one of the men takes out a familiar needle."))
   typewriter(log("The man pricks the needle into the side of #{player_name}'s neck."))
   typewriter(say('Mysterious Man', "You will forever remember the name #{Rainbow(player.enemies[0]).red}."))
-  typewriter(say(Rainbow(player.enemies[0]).red, Rainbow('Hahahahahahahahahahahhahahahahahaha').red))
+  typewriter(say(Rainbow(player.enemies[0]).red, Rainbow('Hahahahahahahahahahahhahahahahahahahahahahahahahahahahahaha.').red))
   player.add_enemy(player.enemies[0])
-  typewriter(log("#{player.enemies[0]} has been added to #{player_name}'s #{Rainbow('enemies').red} list."))
+  typewriter(log("#{Rainbow(player.enemies[0]).red} has been added to #{player_name}'s #{Rainbow('enemies').red} list."))
   typewriter(log("All #{player_name} sees is black."))
 
 
@@ -95,9 +90,50 @@ def part_one(player_object)
   typewriter(log("#{player_name} wakes up on a beach."))
   player.add_location('Beach')
   player.move_silent('Beach')
-  typewriter(log("#{Rainbow('\'Beach\'')} has been added to your locations"))
+  typewriter(log("#{Rainbow('Beach').bright} has been added to your locations."))
   typewriter(log("#{friend_name} is nowhere to be seen."))
   typewriter(log("#{player_name} does not recognize where he is."))
   typewriter(log("#{player_name} stands up."))
   next_scene
+
+  def beach(player_object)
+    player = player_object
+    if player.name == 'jadon' || player.name == 'bobby' || player.name == 'bob'
+      # it's mr. jadon yeo
+      typewriter(log("#{player_name} has a stick in his butt."))
+      typewriter(log("Does #{player_name} try to get the stick out of his butt? (yes/no)"))
+      user_input = STDIN.gets.chomp
+      if user_input == 'yes'
+        typewriter(log("#{player_name} attempts to get the stick out of his butt."))
+        # put random generator to see if stick comes out
+        if rand(1) == 0
+          typewriter(log("The stick is jammed in #{player_name}'s butt pretty far in."))
+          typewriter(log("#{player_name} is not able to get the stick out of his butt."))
+        else
+          typewriter(log("The stick pops out of #{player_name}'s butt."))
+        end
+      else
+        typewriter(log("For whatever reason, #{player_name} decides to keep the stick in his butt."))
+      end
+    end
+
+    # actually get into the game
+    typewriter(log("#{player_name} hears a faint sound in the distant."))
+    typewriter(say(Rainbow(player.enemies[0]).red, 'Help me carry him over here!'))
+    typewriter(log("What does #{player_name} do?"))
+    next_scene
+  end
+end
+
+def main_game(player_object)
+  player = player_object
+  location = player.location
+  case location
+  when 'Starting Point'
+    starting_point(player)
+  when 'Beach'
+    beach(player)
+  else
+    what?
+  end
 end

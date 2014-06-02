@@ -23,7 +23,7 @@ def wait!
 end
 
 def loading
-  5.times do
+  3.times do
     print '.'
     sleep 0.6
   end

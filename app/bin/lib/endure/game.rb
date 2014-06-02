@@ -11,38 +11,23 @@ def game(player_object)
   player_hunger = Rainbow(player.hunger).yellow # hunger = yellow
   player_sanity = Rainbow(player.sanity).cyan # sanity = cyan
 
-  ## REMOVE THIS
-  # part_one(player)
-  # exit
-  ## THIS IS FOR TESTING PURPOSES
-
-  # The actual game
-  # puts Rainbow('Welcome to endure').red.underline
-  # puts "New player #{player_name} initialized"
-  # puts "Player #{player_name} has #{player_health}% health"
-  # puts "Player #{player_name} is #{player_hunger}% fed"
-  # puts "Player #{player_name} is #{player_sanity}% sane"
-  # puts
-  # puts 'Press enter to continue..'
-  # STDIN.gets
-
   while true
     clear
     puts Rainbow('endure').red.underline
     puts Rainbow('What would you like to do?').inverse
     player.list_stats
     puts
-    puts "- #{Rainbow('Start').green}"
+    puts "- #{Rainbow('Play').green}"
     puts "\t - #{Rainbow('Game').blue}"
     puts
     puts "- #{Rainbow('Move').green}"
     if player.locations.empty?
       puts "\t - #{Rainbow('[ No Locations ]').blue}"
     else
-        player.locations.each do |i|
-          puts "\t - #{Rainbow(i).blue}"
-        end
+      player.locations.each do |i|
+        puts "\t - #{Rainbow(i).blue}"
       end
+    end
     puts "- #{Rainbow('Eat').green}"
     if player.foods.empty?
       puts "\t - #{Rainbow('[ No Food ]').blue}"
@@ -77,6 +62,7 @@ def game(player_object)
     else
       player.items.each do |i|
         puts "\t - #{Rainbow(i).blue}"
+      end
     end
     puts
     puts "- #{Rainbow('Kill').green}"
@@ -88,11 +74,10 @@ def game(player_object)
 
     case user_input[0]
 
-    when 'start'
+    when 'play'
       case user_input[1]
       when 'game'
-        # Game
-        part_one(player)
+        main_game(player)
       else
         what?
       end
@@ -143,6 +128,4 @@ def game(player_object)
       what?
     end
   end
-end
-  part_one
 end
