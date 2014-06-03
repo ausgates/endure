@@ -25,7 +25,7 @@ end
 def loading
   3.times do
     print '.'
-    sleep 0.6
+    sleep 0.4
   end
 end
 

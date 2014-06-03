@@ -90,7 +90,7 @@ def starting_point(player_object)
   typewriter(log("#{player_name} wakes up on a beach."))
   player.add_location('Beach')
   player.move_silent('Beach')
-  typewriter(log("#{Rainbow('Beach').bright} has been added to #{player_name} locations."))
+  typewriter(log("#{Rainbow('Beach').bright} has been added to #{player_name}'s locations."))
   typewriter(log("#{friend_name} is nowhere to be seen."))
   typewriter(log("#{player_name} does not recognize where he is."))
   typewriter(log("#{player_name} stands up."))
@@ -128,7 +128,6 @@ def starting_point(player_object)
     # actually get into the game
     typewriter(log("#{player_name} hears a faint sound in the distant."))
     typewriter(say(Rainbow(player.enemies[0]).red, 'Help me carry him over here!'))
-    typewriter(log("What does #{player_name} do?"))
     next_scene
   end
 end
