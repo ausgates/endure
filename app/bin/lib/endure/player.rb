@@ -182,6 +182,10 @@ class Player
     end
   end
 
+  def add_item(item)
+    @items.push(item)
+  end
+
   def add_friend(friend)
     @friends.push(friend)
   end

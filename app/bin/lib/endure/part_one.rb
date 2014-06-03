@@ -101,6 +101,8 @@ def starting_point(player_object)
     player = player_object
     player_name = Rainbow(player.name).green
     friend_name = Rainbow(player.friends[0]).blue
+
+    # Start Beach Scene
     if player.name == 'bobby'
       # it's mr. jadon yeo
       typewriter(log("#{player_name} has a stick in his butt."))
@@ -114,6 +116,9 @@ def starting_point(player_object)
           typewriter(log("#{player_name} is not able to get the stick out of his butt."))
         else
           typewriter(log("The stick pops out of #{player_name}'s butt."))
+          typewriter(log("Hooray!"))
+          player.add_item('Butt Stick')
+          typewriter(log("#{Rainbow('Butt stick').bright} has been added to your inventory."))
         end
       else
         typewriter(log("For whatever reason, #{player_name} decides to keep the stick in his butt."))
