@@ -7,6 +7,8 @@ class Player
     @health = health
     @hunger = hunger
     @sanity = sanity
+    @stamina = stamina
+    @sleep_level = sleep_level
     @location = 'Starting Point'
     @locations = %w()
     @friends = %w()
@@ -19,9 +21,10 @@ class Player
       'banana',
       'yogurt',
       'ketchup',
-      'brownie',
+      # 'brownie',
       'pills',
-      'sauce',
+      'turkey'
+      # 'sauce',
       # 'beans'
       # 'pickle',
       # 'mayo'
@@ -34,7 +37,13 @@ class Player
     ]
   end
 
-  attr_reader :name, :health, :hunger, :sanity, :friends, :enemies, :foods, :items, :location, :locations
+  attributes = [:name, :health, :hunger, :sanity,
+                :friends, :enemies, :foods, :items,
+                :location, :locations, :stamina, :sleep_level]
+
+  attributes.each do |i|
+    attr_reader i
+  end
 
   def move(location)
     if @locations.include? location

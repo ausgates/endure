@@ -5,7 +5,7 @@
 # [Deep Sigh]
 .DS_Store
 
-# No, I don't want these either
+# No, I don't want this either
 Gemfile.lock
 
 *.gem
