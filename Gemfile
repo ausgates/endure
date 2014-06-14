@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
-gem 'rainbow'
-gem 'require_all'
+
+# Specify your gem's dependencies in endure.gemspec
+gemspec
